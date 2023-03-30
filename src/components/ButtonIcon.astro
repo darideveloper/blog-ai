@@ -1,0 +1,16 @@
+---
+export interface Props {
+  extra_classes?: string
+  // on_click: (e: MouseEvent) => void
+}
+
+const { extra_classes, on_click } = Astro.props
+let classes = 'title menu-button inline-block text-slate-100 focus:outline-none rounded-full text-center shadow-lg shadow-indigo-200 bg-indigo-500 hover:bg-indigo-700'
+classes += (extra_classes ? ` ${extra_classes} ` : "")
+---
+
+<button
+  class={classes}
+>
+  <slot/>
+</button>

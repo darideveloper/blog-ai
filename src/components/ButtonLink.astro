@@ -1,0 +1,17 @@
+---
+export interface Props {
+  href?: string
+  extra_classes?: string
+}
+
+const { href, extra_classes } = Astro.props
+let classes = 'title inline-block text-slate-100 focus:outline-none rounded-full text-center shadow-lg shadow-indigo-200 px-10 py-2.5 bg-indigo-500 hover:bg-indigo-700'
+classes += (extra_classes ? ` ${extra_classes} ` : "")
+---
+
+<a
+  href={href}
+  class={classes}
+>
+  <slot/>
+</a>
