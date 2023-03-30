@@ -1,25 +1,80 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro'
+
+const nav_links = [
+  {
+    text: 'Home',
+    href: '/',
+    target: '',
+  },
+  {
+    text: 'Blog',
+    href: '/blog',
+    target: '',
+  },
+  {
+    text: 'Acerca de',
+    href: '/acerca-de',
+    target: '',
+  },
+  {
+    text: 'Servicios',
+    href: '/servicios',
+    target: '',
+  },
+  {
+    text: 'Dari Dev',
+    href: 'https://www.darideveloper.com/',
+    target: '_blank',
+  },
+]
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+<header class='flex-col items-center justify-center flex text-lg lg:flex-row lg:justify-between w-full'>
+  <a
+    href='/'
+    class='logo w-44 inline-block p-4'
+  >
+    <img
+      src='imgs/logo.png'
+      alt='Blog Dari Dev logo'
+    />
+  </a>
+
+  <div class="menu flex flex-col items-center lg:flex-row">
+	  <nav>
+		<ul class='text-center flex flex-col sm:flex-row'>
+		  {
+			nav_links.map((nav_link) => (
+			  <li class='inline-block'>
+				<HeaderLink
+				  href={nav_link.href}
+				  class='py-2 px-20 sm:px-6 text-gray-900 hover:text-indigo-500'
+				  target={nav_link.target}
+				>
+				  {nav_link.text}
+				</HeaderLink>
+			  </li>
+			))
+		  }
+		</ul>
+	  </nav>
+	
+
+	  <a
+		href='mailto:darideveloper@gmail.com'
+		class='title inline-block text-slate-100 bg-indigo-500  hover:bg-indigo-700 focus:outline-none rounded-full px-5 py-2.5 text-center shadow-lg shadow-indigo-200 w-40 mt-5 lg:mt-0 lg:ml-5' 
+		>Contactanos</a
+	  >
+  </div>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+
+<style lang="sass">
+	// Overwrite active link styles
+	a.active
+		color: #5145CD
+		text-decoration: none
+
+	// responsive header
+
 </style>

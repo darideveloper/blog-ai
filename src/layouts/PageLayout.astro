@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import globals from '../globals.css'
 
 // Get props
 interface Props {
@@ -17,11 +18,11 @@ const { page_title, page_description } = Astro.props
 <html lang='en'>
   <head>
     <BaseHead
-      title={page_title ? `${SITE_TITLE} | {page_title} ` : SITE_TITLE}
+      title={page_title ? `${SITE_TITLE} | ${page_title} ` : SITE_TITLE}
       description={page_description ? page_description : SITE_DESCRIPTION}
     />
   </head>
-  <body>
+  <body class={`container mx-auto px-5 bg-slate-100 text-slate-950`}>
     <Header title={SITE_TITLE} />
     <main>
       <slot />
@@ -30,67 +31,12 @@ const { page_title, page_description } = Astro.props
   </body>
 </html>
 
-<style>
-	body {
-	  font-family: Verdana, sans-serif;
-	  margin: auto;
-	  padding: 20px;
-	  max-width: 65ch;
-	  text-align: left;
-	  background-color: #fff;
-	  word-wrap: break-word;
-	  overflow-wrap: break-word;
-	  line-height: 1.5;
-	  color: #444;
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	strong,
-	b {
-	  color: #222;
-	}
-	a {
-	  color: #3273dc;
-	}
-	nav a {
-	  margin-right: 10px;
-	}
-	textarea {
-	  width: 100%;
-	  font-size: 16px;
-	}
-	input {
-	  font-size: 16px;
-	}
-	content {
-	  line-height: 1.6;
-	}
-	table {
-	  width: 100%;
-	}
-	img {
-	  max-width: 100%;
-	  height: auto;
-	}
-	code {
-	  padding: 2px 5px;
-	  background-color: #f2f2f2;
-	}
-	pre {
-	  padding: 1rem;
-	}
-	pre > code {
-	  all: unset;
-	}
-	blockquote {
-	  border: 1px solid #999;
-	  color: #222;
-	  padding: 2px 0px 2px 20px;
-	  margin: 0px;
-	  font-style: italic;
-	}
-  </style>
+<style lang="sass">
+	// fonts
+	body
+		font-family: 'Assistant', sans-serif
+
+	.title, h1, h2, h3, h4, h5, h6
+		font-family: 'Baloo 2', cursive
+
+</style>
