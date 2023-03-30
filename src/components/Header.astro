@@ -46,7 +46,7 @@ const nav_links = [
   </a>
 
   <div class='menu flex flex-col items-center lg:flex-row'>
-    <nav>
+    <nav class="h-0 transition-all duration-500 overflow-hidden sm:h-auto">
       <ul class='text-center flex flex-col sm:flex-row'>
         {
           nav_links.map((nav_link) => (
@@ -83,18 +83,7 @@ const nav_links = [
 
   // responsive header
   @media (max-width: 640px)
-    header
+    header.active
       nav
-        height: 0px
-        transition-duration: 0.5s
-        overflow: hidden
-
-      .button-icon
-        border: 1px solid red
-
-      &.active
-        nav
-          height: 173px
+        height: 173px
 </style>
-
-<script></script>
