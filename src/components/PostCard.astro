@@ -1,0 +1,44 @@
+---
+import FormattedDate from './FormattedDate.astro'
+export interface Props {
+    title: string,
+    category: string,
+    description: string,
+    heroImage: string,
+    slug: string,
+    pubDate: object,
+    author: string
+    extraClass?: string
+}
+
+const { title, category, description, heroImage, slug, pubDate, author, extraClass } = Astro.props
+const postClass = `post ${extraClass}`
+
+---
+
+<article class={postClass}>
+    <a href={`/blog/${slug}/`} class="mb-2">
+        <img class="rounded-xl opacity-80 hover:opacity-100 transition duration-250" src={heroImage} alt={`imagen del post ${title}`} />
+    </a>
+
+    <div class="content p-4">
+        <header>
+            <a class="uppercase text-indigo-700" href={`/blog/${category}/`}>{category}</a>
+        </header>
+            
+        <div class="content">
+            <h3 class="text-2xl font-bold text-gray-900 hover:text-gray-600 mb-2">
+                <a href={`/blog/${slug}/`}>{title}</a>
+            </h3>
+            <p>{description}</p>
+        </div>
+
+        <footer class="flex items-center justify-start mt-2">
+            <img class="w-10" src={`/imgs/authors/${author}.png`} alt={`imagen de author ${author}`}>
+            <address class="author ml-2">
+                <a rel="author" href="/author/john-doe" class="mx-2 font-bold text-gray-900 hover:text-gray-600 mb-2">John Doe</a>
+                <FormattedDate date={pubDate} />
+            </address>
+        </footer>
+    </div>
+</article>
