@@ -2,46 +2,48 @@
 
 // Import components
 import FormattedDate from '../components/FormattedDate.astro';
+import PostCard from '../components/PostCard.astro';
 
-// Get and sort posts
+// Get and sort posts by date
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog')).sort(
+let posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+// Get first post
+const [firstPost] = posts;
+
+// Limit number of posts
+const limit = 7
+posts = posts.slice(1, limit)
+console.log (typeof firstPost.data.pubDate)
 
 ---
 <section class="posts mt-20">
 	<h2 class="text-4xl text-center mb-5 font-bold">Últimos Posts</h2>
+	<PostCard 
+		title={firstPost.data.title}
+		category={firstPost.data.category}
+		description={firstPost.data.description}
+		heroImage={firstPost.data.heroImage}
+		slug={firstPost.slug}
+		pubDate={firstPost.data.pubDate}
+		author={firstPost.data.author}
+		extraClass="col-span-1 sm:col-span-2 md:col-span-3 mb-5 sm:mb-10 md:px-10 lg:px-20"
+	/>
 	<div class="posts grid-cols-1 grid gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-10">
 		{
 			posts.map((post) => (
-				<article class="post">
-					<a href={`/blog/${post.slug}/`} class="mb-2">
-						<img class="rounded-xl" src={post.data.heroImage} alt={`imagen del post ${post.data.title}`} />
-					</a>
-
-					<div class="content p-4">
-						<header>
-							<a class="uppercase text-indigo-700" href={`/blog/${post.data.category}/`}>{post.data.category}</a>
-						</header>
-							
-						<div class="content">
-							<h3 class="text-2xl font-bold text-gray-900 hover:text-gray-70 mb-2">
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</h3>
-							<p>{post.data.description}</p>
-						</div>
-		
-						<footer class="flex items-center justify-start mt-2">
-							<img class="w-10" src={`/imgs/authors/${post.data.author}.png`} alt={`imagen de author ${post.data.author}`}>
-							<address class="author ml-2">
-								<a rel="author" href="/author/john-doe" class="mx-2 font-bold text-gray-900 hover:text-gray-70 mb-2">John Doe</a>
-								<FormattedDate date={post.data.pubDate} />
-							</address>
-						</footer>
-					</div>
-				</article>
+				<PostCard 
+					title={post.data.title}
+					category={post.data.category}
+					description={post.data.description}
+					heroImage={post.data.heroImage}
+					slug={post.slug}
+					pubDate={post.data.pubDate}
+					author={post.data.author}
+				/>
 			))
 		}
 	</div>
