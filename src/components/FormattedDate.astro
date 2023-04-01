@@ -4,14 +4,18 @@ export interface Props {
 }
 
 const { date } = Astro.props;
+const date_text = date.toLocaleDateString('es-mx', {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+})
+const date_title = date.toLocaleDateString('es-mx', {
+	year: 'numeric',
+	month: 'numeric',
+	day: 'numeric',
+})
 ---
 
-<time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
+<time pubdate datetime={date.toISOString()} title={date_title}>
+	{date_text}
 </time>

@@ -16,3 +16,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+h1, h2 {
+  color: #2b2d68
+}
+
+body {
+  color: #232323;
+}
