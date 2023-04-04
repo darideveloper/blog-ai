@@ -3,7 +3,7 @@ title: "First post"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra."
 pubDate: "Jul 08 2022"
 heroImage: "/imgs/hero.png"
-category: "tech"
+category: "tech2"
 author: "Dari Developer"
 ---
 

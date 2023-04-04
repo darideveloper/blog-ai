@@ -3,7 +3,7 @@ title: "Third post"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra."
 pubDate: "Jul 15 2022"
 heroImage: "/imgs/hero.png"
-category: "sample"
+category: "sample2"
 author: "Dari Developer"
 ---
 
