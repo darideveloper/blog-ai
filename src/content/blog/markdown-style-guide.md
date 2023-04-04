@@ -1,5 +1,5 @@
 ---
-title: "Markdown Style Guide"
+title: "Markdown Style Guide Sample posts helo world"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra."
 pubDate: "Jul 01 2022"
 heroImage: "/imgs/hero.png"
@@ -33,7 +33,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 
 ## Images
 
-![This is a placeholder image description](/placeholder-social.jpg)
+![This is a placeholder image description](/imgs/sample-hero-post.jpg)
 
 ## Blockquotes
 

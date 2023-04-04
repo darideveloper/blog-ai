@@ -1,51 +1,53 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+
+// Import layout
+import PageLayout from './PageLayout.astro';
+
+// Import components
 import FormattedDate from '../components/FormattedDate.astro';
+
+// Get post data as prop
+import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, author } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<PageLayout>
+	<article class="w-90 md:w-4/5  mx-auto post">
+		{heroImage && <img class="w-full mt-5 mx-auto rounded-lg lg:mt-0" src={heroImage} alt="imagen principal del post" />}
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+		<header class="flex items-center justify-between py-10 flex-col md:flex-row">
+			<h1 class="title text-2xl mb-10 md:mb-0 text-center md:text-left leading-normal">{title}</h1>
+			<div class="wrapper-address flex items-center justify-between">
+				<a href={`/autores/${author.toLowerCase()}`}>
+					<img class="w-10 mr-5" src={`/imgs/authors/${author}.png`} alt={`imagen del autor ${author}`}>
+				</a>
+				<address class="w-64">
+					<div class="info">
+						{author && <a href={`/autores/${author.toLowerCase()}`}>Por {author.toUpperCase()}</a>}
+						{category && <a href={`/categorias/${category.toLowerCase()}`}>en {category.toUpperCase()}</a>}
+					</div>
+					<FormattedDate date={pubDate} />
+				</address>
+			</div>
+		</header>
+		{
+			updatedDate && (
+				<div class="last-updated-on">
+					Last updated on <FormattedDate date={updatedDate} />
+				</div>
+			)
+		}
+		<hr class="mb-5" />
+		<slot />
+	</article>
+</PageLayout>
+
+<script>
+	// Remove internal h1
+	const h1 = document.querySelector('hr + h1')
+	console.log (h1)
+	h1 && h1.remove()
+</script>

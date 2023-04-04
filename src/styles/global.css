@@ -24,3 +24,84 @@ h1, h2 {
 body {
   color: #232323;
 }
+
+/* Post styles */
+
+.post p {
+  margin: 10px 0;
+}
+
+.post h1 {
+  font-size: 3rem;
+}
+
+.post h2 {
+  font-size: 2.5rem;
+}
+
+.post h3 {
+  font-size: 2rem;
+}
+
+.post h4 {
+  font-size: 1.5rem;
+}
+
+.post h5 {
+  font-size: 1.2rem;
+}
+
+.post h6 {
+  font-size: 1.1rem;
+}
+
+.post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
+  color: #2b2d68;
+}
+
+.post code {
+  background-color: #2b2d68;
+  color:#f1f5f9;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+
+.post blockquote {
+  margin-left: 10px;
+  border-left: 3px solid #2b2d68;
+  padding-left: 10px;
+}
+
+.post table {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+.post table td {
+  border: 1px solid #2b2d68;
+  padding: 5px;
+  text-align: center;
+}
+
+.post table th {
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+
+.post pre {
+  padding: 15px
+}
+
+.post pre code {
+  background-color: transparent;
+}
+
+.post ul {
+  margin-left: 10px;
+}
+
+.post ol {
+  list-style: decimal;
+  margin-left: 20px;
+}
