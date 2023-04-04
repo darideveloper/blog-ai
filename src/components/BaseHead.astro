@@ -15,9 +15,10 @@ export interface Props {
 	title: string;
 	description: string;
 	image?: string;
+	redirect?: string;
 }
 
-const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+const { title, description, image = '/placeholder-social.jpg', redirect } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -52,3 +53,6 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Redcirect if exists prop -->
+<meta http-equiv="refresh" content={redirect && `0; url=${redirect}`}>
