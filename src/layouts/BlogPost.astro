@@ -1,81 +1,129 @@
 ---
-
 // Import layout
-import PageLayout from './PageLayout.astro';
+import PageLayout from './PageLayout.astro'
 
 // Import components
-import FormattedDate from '../components/FormattedDate.astro';
-import PostCard from '../components/PostCard.astro';
+import FormattedDate from '../components/FormattedDate.astro'
+import PostCard from '../components/PostCard.astro'
 
 // Get current post data as prop
-import type { CollectionEntry } from 'astro:content';
-type Props = CollectionEntry<'blog'>['data'];
-const { title, description, pubDate, updatedDate, heroImage, category, author } = Astro.props;
+import type { CollectionEntry } from 'astro:content'
+type Props = CollectionEntry<'blog'>['data']
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  category,
+  author,
+} = Astro.props
 
 // get posts of the same category
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
-const posts_related = posts.filter(post => post.data.category === category && post.data.title !== title).slice(0, 4);
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+const posts_related = posts
+  .filter(
+    (post) => post.data.category === category && post.data.title !== title
+  )
+  .slice(0, 4)
 ---
 
-<PageLayout>
-	<div class="w-full mx-0 md:mx-auto mt-5 content flex items-start justify-between flex-col lg:flex-row gap-5 lg:gap-20">
-		<article class="lg:w-4/5 post">
-			{heroImage && <img class="w-full mt-5 mx-auto rounded-lg lg:mt-0" src={heroImage} alt="imagen principal del post" />}
-	
-			<header class="flex items-center justify-between py-10 flex-col md:flex-row">
-				<h1 class="title text-2xl mb-10 md:mb-0 text-center md:text-left leading-normal">{title}</h1>
-				<div class="wrapper-address flex items-center justify-between">
-					<a href={`/autores/${author.toLowerCase()}`}>
-						<img class="w-10 mr-5" src={`/imgs/authors/${author}.png`} alt={`imagen del autor ${author}`}>
-					</a>
-					<address class="w-64">
-						<div class="info">
-							{author && <a href={`/autores/${author.toLowerCase()}`}>Por {author.toUpperCase()}</a>}
-							{category && <a href={`/categorias/${category.toLowerCase()}`}>en {category.toUpperCase()}</a>}
-						</div>
-						<FormattedDate date={pubDate} />
-					</address>
-				</div>
-			</header>
-			{
-				updatedDate && (
-					<div class="last-updated-on">
-						Last updated on <FormattedDate date={updatedDate} />
-					</div>
-				)
-			}
-			<hr class="mb-5" />
-			<div class="posts-content mx-full lg:w-11/12">
-				<slot />
-			</div>
-		</article>
-		<aside class="w-full lg:w-1/5">
-			<h2 class="text-2xl mb-10 mt-0 lg:mt-5">Posts relacionados</h2>
-			<div class="posts-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10">
-				{
-					posts_related.map(post => (
-						<PostCard 
-							title={post.data.title}
-							category={post.data.category}
-							description={post.data.description}
-							heroImage={post.data.heroImage}
-							slug={post.slug}
-							pubDate={post.data.pubDate}
-							author={post.data.author}
-						/>
-					))
-				}
-			</div>
-		</aside>
-	</div>
+<PageLayout
+  page_title={title}
+  page_description={description}
+>
+  <div
+    class='w-full mx-0 md:mx-auto mt-5 content flex items-start justify-between flex-col lg:flex-row gap-5 lg:gap-20'
+  >
+    <article class='lg:w-4/5 post'>
+      {
+        heroImage && (
+          <img
+            class='w-full mt-5 mx-auto rounded-lg lg:mt-0'
+            src={heroImage}
+            alt='imagen principal del post'
+          />
+        )
+      }
+
+      <header
+        class='flex items-center justify-between py-10 flex-col md:flex-row'
+      >
+        <h1
+          class='title text-2xl mb-10 md:mb-0 text-center md:text-left leading-normal'
+        >
+          {title}
+        </h1>
+        <div class='wrapper-address flex items-center justify-between'>
+          <a href={`/autores/${author.toLowerCase()}`}>
+            <img
+              class='w-10 mr-5'
+              src={`/imgs/authors/${author}.png`}
+              alt={`imagen del autor ${author}`}
+            />
+          </a>
+          <address class='w-64'>
+            <div class='info'>
+              {
+                author && (
+                  <a href={`/autores/${author.toLowerCase()}`}>
+                    Por {author.toUpperCase()}
+                  </a>
+                )
+              }
+              {
+                category && (
+                  <a href={`/categorias/${category.toLowerCase()}`}>
+                    en {category.toUpperCase()}
+                  </a>
+                )
+              }
+            </div>
+            <FormattedDate date={pubDate} />
+          </address>
+        </div>
+      </header>
+      {
+        updatedDate && (
+          <div class='last-updated-on'>
+            Last updated on <FormattedDate date={updatedDate} />
+          </div>
+        )
+      }
+      <hr class='mb-5' />
+      <div class='posts-content mx-full lg:w-11/12'>
+        <slot />
+      </div>
+    </article>
+    <aside class='w-full lg:w-1/5'>
+      <h2 class='text-2xl mb-10 mt-0 lg:mt-5'>Posts relacionados</h2>
+      <div
+        class='posts-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-10'
+      >
+        {
+          posts_related.map((post) => (
+            <PostCard
+              title={post.data.title}
+              category={post.data.category}
+              description={post.data.description}
+              heroImage={post.data.heroImage}
+              slug={post.slug}
+              pubDate={post.data.pubDate}
+              author={post.data.author}
+            />
+          ))
+        }
+      </div>
+    </aside>
+  </div>
 </PageLayout>
 
 <script>
-	// Remove internal h1
-	const h1 = document.querySelector('.posts-content h1')
-	console.log (h1)
-	h1 && h1.remove()
+  // Remove internal h1
+  const h1 = document.querySelector('.posts-content h1')
+  console.log(h1)
+  h1 && h1.remove()
 </script>

@@ -1,4 +1,4 @@
-export default function Hero({ title, image, subtitle }) {
+export default function Hero({ title, image, subtitle="" }) {
 
   return (
     <section

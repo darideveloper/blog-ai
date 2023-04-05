@@ -17,7 +17,7 @@ const { page_title, page_description } = Astro.props
 <html lang='en'>
   <head>
     <BaseHead
-      title={page_title ? `${SITE_TITLE} | ${page_title} ` : SITE_TITLE}
+      title={page_title ? `${page_title} | ${SITE_TITLE} ` : SITE_TITLE}
       description={page_description ? page_description : SITE_DESCRIPTION}
     />
   </head>

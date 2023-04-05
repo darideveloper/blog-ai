@@ -35,9 +35,12 @@ export function getStaticPaths() {
 
 const { category } = Astro.params;
 ---
-<PageLayout>
+<PageLayout
+  page_title={category?.toUpperCase()}
+  page_description={`publicaciones de la categoría '${category}'`}
+>
   <Hero
-		title={category.toUpperCase()}
+		title={category?.toUpperCase()}
     image={`/imgs/categories/${category}.png`}
 	/>
 
