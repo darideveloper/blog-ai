@@ -1,15 +1,13 @@
 ---
 
 // Import components
-import FormattedDate from '../components/FormattedDate.astro';
 import PostCard from '../components/PostCard.astro';
 
 // Get and sort posts by date
-import { getCollection } from 'astro:content';
-
-let posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+export interface Props {
+	posts: any
+}
+let { posts } = Astro.props;
 
 // Get first post
 const [firstPost] = posts;
@@ -17,6 +15,8 @@ const [firstPost] = posts;
 // Limit number of posts
 const limit = 7
 posts = posts.slice(1, limit)
+
+
 ---
 <section class="posts mt-20">
 	<h2 class="text-4xl text-center mb-5 font-bold">Últimos Posts</h2>

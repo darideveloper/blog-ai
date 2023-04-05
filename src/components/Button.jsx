@@ -7,8 +7,6 @@ export default function Button({ extra_classes, active_style, on_click, children
   let classes = 'title inline-block text-slate-100 focus:outline-none rounded-full text-center shadow-lg shadow-indigo-200 bg-indigo-500 hover:bg-indigo-700 transition duration-200 ease-in-out transform'
   classes += `${classes} ${extra_classes}`
 
-  console.log (on_click)
-
   return (
     <button className={classes} onClick={() => { setActive(!active); on_click() }} style={active ? active_style : {}}>
       {children}

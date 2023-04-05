@@ -1,0 +1,46 @@
+---
+// Import layouts
+import PageLayout from '../../layouts/PageLayout.astro';
+import PostsGrid from '../../components/PostsGrid.astro';
+
+// Import components
+import Hero from '../../components/Hero.jsx';
+
+// Get categories from posts
+import { CollectionEntry, getCollection } from 'astro:content';
+export const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+
+export function getStaticPaths() {
+  // Get categories from posts
+  let categories:string[] = []
+  posts.forEach((post) => {
+    const post_category = post.data.category
+    if (post_category) {
+      if (! categories.includes(post_category)) {
+        categories.push (post_category)
+      }
+    }
+  })
+
+  // return array of objects for routing
+  let static_paths:{params: {category: string}}[] = []
+  for (const category_key of categories) {
+    let params = {params: {category: category_key}}
+    static_paths.push(params)
+  }
+  return static_paths
+}
+
+const { category } = Astro.params;
+---
+<PageLayout>
+  <Hero
+		title={category.toUpperCase()}
+    image={`/imgs/categories/${category}.png`}
+	/>
+
+  <PostsGrid posts={posts.filter((post) => post.data.category === category)} />
+
+</PageLayout>

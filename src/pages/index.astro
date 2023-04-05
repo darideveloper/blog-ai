@@ -3,12 +3,25 @@
 import PageLayout from '../layouts/PageLayout.astro'
 
 // Import components
-import Hero from '../components/Hero.astro'
+import Hero from '../components/Hero.jsx'
 import PostsGrid from '../components/PostsGrid.astro'
+
+// Get and sort posts by date
+import { getCollection } from 'astro:content';
+
+let posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <PageLayout>
-	<Hero/>
-	<PostsGrid/>
+	<Hero
+		title="Tu blog de confianza"
+		image="/imgs/hero.png"
+		subtitle="Sin publicidad, sin trucos, solo lo mejor para ti."
+	/>
+	<PostsGrid
+		posts={posts}
+	/>
 </PageLayout>
 
