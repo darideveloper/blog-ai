@@ -12,31 +12,31 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 )
 
-let categories: Record<string, number> = {}
+let authors:Record<string, number> = {}
 posts.forEach((post) => {
-  const post_category = post.data.category
-  if (post_category) {
-    if (categories[post_category]) {
-      categories[post_category] += 1
+  const post_author = post.data.author
+  if (post_author) {
+    if (authors[post_author]) {
+      authors[post_author] += 1
     } else {
-      categories[post_category] = 1
+      authors[post_author] = 1
     }
   }
 })
 ---
 
 <PageLayout
-  page_title="Categorias"
-  page_description="Categorias de los artículos"
+  page_title="Autores"
+  page_description="Autores de los artículos publicados en el blog."
 >
   <Hero
-		title="Categorias"
+		title="Autores"
 		image="/imgs/hero.png"
 	/>
   <CardsGrid
-    cards_elems={categories}
-    base_img_folder="categories"
-    base_link="categorias"
+    cards_elems={authors}
+    base_img_folder="authors"
+    base_link="autores"
   />
 </PageLayout>
 

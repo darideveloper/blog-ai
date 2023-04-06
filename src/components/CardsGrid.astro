@@ -1,0 +1,27 @@
+---
+export interface Props {
+  cards_elems: Record<string, number>
+  base_img_folder: string
+  base_link: string
+}
+
+const { cards_elems, base_img_folder, base_link } = Astro.props
+---
+
+<section class="mt-20 cards grid grid-cols-1 gap-10 sm:grid-cols-3 md:grid-cols-4">
+  {
+    Object.keys(cards_elems).map((elem) => (
+      <article class='card w-full opacity-80 hover:opacity-100 transition duration-250'>
+        <a href={`/${base_link}/${elem}`} class="block relative">
+          <img class="opacity-80 w-full" src={`/imgs/${base_img_folder}/${elem}.png`} alt="imagen de la categoría" />  
+          <div class="info top-0 left-0 w-full h-full flex items-center justify-center z-10 bg-indigo-200 rounded-b-xl">
+              <h2 class="text-3xl inline-block py-2 text-slate-600 font-bold">
+                {elem.toUpperCase()}
+                <span class="counter">({cards_elems[elem]})</span>
+              </h2>
+          </div>
+        </a>
+      </article>
+    ))
+  }
+</section>

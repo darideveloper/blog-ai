@@ -1,0 +1,50 @@
+---
+// Import layouts
+import PageLayout from '../../layouts/PageLayout.astro';
+import PostsGrid from '../../components/PostsGrid.astro';
+
+// Import components
+import Hero from '../../components/Hero.jsx';
+
+// Get posts
+import { CollectionEntry, getCollection } from 'astro:content';
+export const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)
+
+export function getStaticPaths() {
+  // Get authors from posts
+  let authors:string[] = []
+  posts.forEach((post) => {
+    const post_author = post.data.author
+    if (post_author) {
+      if (! authors.includes(post_author)) {
+        authors.push (post_author)
+      }
+    }
+  })
+
+  // return array of objects for routing
+  let static_paths:{params: {author: string}}[] = []
+  for (const author_key of authors) {
+    let params = {params: {author: author_key}}
+    static_paths.push(params)
+  }
+  return static_paths
+}
+
+const { author } = Astro.params;
+---
+<PageLayout
+  page_title={author?.toUpperCase()}
+  page_description={`publicaciones de la categoría '${author}'`}
+>
+  <Hero
+		title={author?.toUpperCase()}
+    image={`/imgs/authors/${author}.png`}
+    paralax={false}
+	/>
+
+  <PostsGrid posts={posts.filter((post) => post.data.author === author)} />
+
+</PageLayout>

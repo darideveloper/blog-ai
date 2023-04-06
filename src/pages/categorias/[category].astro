@@ -6,7 +6,7 @@ import PostsGrid from '../../components/PostsGrid.astro';
 // Import components
 import Hero from '../../components/Hero.jsx';
 
-// Get categories from posts
+// Get posts
 import { CollectionEntry, getCollection } from 'astro:content';
 export const posts = (await getCollection('blog')).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
