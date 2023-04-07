@@ -6,29 +6,29 @@
 2. Iniciar sesióin en https://stackedit.io/app (para escribir el post)
 3. Pedir que genere un blog, sobre el tema en cuestión
 4. Guardar el texto generado
-5. Pedir que expanda el texto generado
-6. guardar los textos expandidos
-7. solicitar un título para el post
-8. Añadir subtítulos al post
-9. Añadir negritas al post
-10. Añadir enlaces al post
+5. Añadir títulos al post (opcional, usar chat gpt)
+6. Contar palabras con 
+7. Pedir que expanda el texto generado, para lograr aprox 1000 palabras
+8. guardar los textos expandidos
+9. añadir título al posts (opcional, usar chat gpt)
+10. Añadir subtítulos al post
+11. Añadir negritas al post
+12. Añadir enlaces al post
 
 ## Añadir imagenes
 
 1. Ir a https://www.pexels.com/es-es/ o https://unsplash.com/ o https://pixabay.com/es/
-2. Buscar y descargar imagenes que se justen a los subtitulos del posts
-3. Compresionar las imagenes usando https://www.iloveimg.com/compress-image
-4. Iniciar sesión en https://imgur.com/
-5. Hacer una nueva publicación
-6. Añadir todas las imagenes
-7. Colocar las imagenes en un album, usando el link de la imagen
+2. Descargar la imagen que será la principal del post (en calidad de al menos 1200)
+3. Buscar y descargar imagenes que se justen a los subtitulos del posts (en calidad de al menos 1200)
+4. comprimir las imagenes usando https://www.iloveimg.com/compress-image
+5. insertar las imagenes en el post, utilizando la estructura ![descripción de la imagen](/imagen.jpg)
 
 ## Añadir cabeceras
 1. Copiar el siguiente texto al principio
 ---
 title: "First post"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra."
-pubDate: "Jul 08 2022"
+pubDate: "Jul 08 2023"
 heroImage: "/imgs/hero.png"
 category: "tech"
 author: "Dari Developer"

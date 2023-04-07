@@ -36,7 +36,7 @@ const postClass = `post ${extraClass}`
         <footer class="flex items-center justify-start mt-2">
             <img class="w-10" src={`/imgs/authors/${author}.png`} alt={`imagen de author ${author}`}>
             <address class="author ml-2">
-                <a rel="author" href="/autores/john-doe" class="mx-2 font-bold text-gray-900 hover:text-gray-600 mb-2">{author}</a>
+                <a rel="author" href={`/autores/${author}`} class="mx-2 font-bold text-gray-900 hover:text-gray-600 mb-2">{author}</a>
                 <FormattedDate date={pubDate} />
             </address>
         </footer>

@@ -1,7 +1,7 @@
 ---
 title:  "Los mejores lenguajes de programación para principiantes"
 description:  "Revisión de los mejores lenguajes de programación para aprender a programar, considerando sus principales ventaja"
-pubDate:  "Apr 06 2022"
+pubDate:  "Apr 06 2023"
 heroImage:  "/public/imgs/los-mejores-lenguajes-de-programación-para-principiantes/introduccion.jpg"
 category:  "tech"
 author:  "Dari Developer"
