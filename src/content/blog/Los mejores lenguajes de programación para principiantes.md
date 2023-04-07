@@ -5,7 +5,6 @@ pubDate:  "Apr 06 2022"
 heroImage:  "/public/imgs/los-mejores-lenguajes-de-programación-para-principiantes/introduccion.jpg"
 category:  "tech"
 author:  "Dari Developer"
-
 ---
 
 ## ¿Por donde comenzar?
