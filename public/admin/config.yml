@@ -17,5 +17,36 @@ collections:
       - {label: "Descipción", name: "description", widget: "string"}
       - {label: "Fecha", name: "pubDate", widget: "datetime"}
       - {label: "Imagen principal", name: "heroImage", widget: "image"}
-      - {label: "Categoría", name: "category", widget: list, default: ['tech', 'psicologia']}
+      - name: author
+        label: Autor
+        widget: relation
+        collection: authors
+        searchFields: [name]
+        valueField: name
+      - name: category
+        label: Categoria
+        widget: relation
+        collection: category
+        searchFields: [name, description]
+        valueField: name
       - {label: "Contenido", name: "body", widget: "markdown"}
+
+  - name: "author" 
+    label: "Autor"
+    folder: "src/content/authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nomabre", name: "name", widget: "string"}
+      - {label: "Imagen de perfil", name: "image", widget: "image"}
+
+  - name: "category" 
+    label: "Categori"
+    folder: "src/content/categories"
+    create: true 
+    slug: "{{slug}}" 
+    fields:
+      - {label: "Nomabre", name: "name", widget: "string"}
+      - {label: "Descipción", name: "description", widget: "string"}
+      - {label: "Imagen", name: "image", widget: "image"}
+  

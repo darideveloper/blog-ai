@@ -3,7 +3,7 @@
 ## Crear texto 
 
 1. Iniciar sesión en https://chat.openai.com/chat
-2. Iniciar sesióin en https://stackedit.io/app (para escribir el post)
+2. Inicir sesión en el editor de blogs: https://superb-torte-ff9341.netlify.app/admin/#/collections/blog
 3. Pedir que genere un blog, sobre el tema en cuestión
 4. Guardar el texto generado
 5. Añadir títulos al post (opcional, usar chat gpt)
