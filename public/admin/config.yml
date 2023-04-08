@@ -20,7 +20,7 @@ collections:
       - name: author
         label: Autor
         widget: relation
-        collection: authors
+        collection: author
         searchFields: [name]
         valueField: name
       - name: category
@@ -35,16 +35,16 @@ collections:
     label: "Autor"
     folder: "src/content/authors"
     create: true
-    slug: "{{slug}}"
+    slug: "{{name}}"
     fields:
       - {label: "Nomabre", name: "name", widget: "string"}
       - {label: "Imagen de perfil", name: "image", widget: "image"}
 
   - name: "category" 
-    label: "Categori"
+    label: "Categoria"
     folder: "src/content/categories"
     create: true 
-    slug: "{{slug}}" 
+    slug: "{{name}}" 
     fields:
       - {label: "Nomabre", name: "name", widget: "string"}
       - {label: "Descipción", name: "description", widget: "string"}
