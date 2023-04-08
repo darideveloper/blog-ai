@@ -38,3 +38,21 @@ const { page_title, page_description } = Astro.props
     .title, h1, h2, h3, h4, h5, h6
       font-family: 'Baloo 2', cursive
 </style>
+
+<script>
+  declare global {
+    interface Window {
+      netlifyIdentity: any;
+    }
+  }
+
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user:any) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
