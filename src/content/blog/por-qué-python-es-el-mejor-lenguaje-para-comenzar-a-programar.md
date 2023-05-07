@@ -12,7 +12,7 @@ heroImage: /imgs/posts/mobile-g66da20387_1280.jpg
 author: Dari Developer
 category: tech
 ---
-Python es uno de los lenguajes de programación **más populares y versátiles que existen hoy en día**. Su facilidad de uso, sintaxis legible y amplia comunidad de desarrolladores lo han convertido en una opción popular para quienes quieren iniciarse en el mundo de la programación.
+Python es uno de los lenguajes de programación **más populares y versátiles que existen hoy en día**. Su **facilidad de uso**, **sintaxis legible** y **amplia comunidad** de desarrolladores lo han convertido en una opción popular para quienes quieren iniciarse en el mundo de la programación.
 
 Aquí hay algunas razones por las que creo que Python es el mejor lenguaje para comenzar a programar:
 
