@@ -3,6 +3,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from "@astrojs/tailwind"
 import react from "@astrojs/react"
+import deno from '@astrojs/deno'
 // import NetlifyCMS from 'astro-netlify-cms'
 
 // https://astro.build/config
@@ -24,5 +25,8 @@ export default defineConfig({
     //     ],
     //   },
     // })
-  ]
+  ],
+  adapter: deno({
+    port: 8081
+  })
 })
