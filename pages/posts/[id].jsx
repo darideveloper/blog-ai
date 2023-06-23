@@ -17,23 +17,25 @@ export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   return {
     props: {
-      postData,
+      ...postData,
     },
   }
 }
 
 // Render current post
-export default function Post({postData}) {
+export default function Post({title, date, description, contentHtml}) {
+
   return <Layout>
     <Head>
-      <title>{postData.title}</title>
+      <title>{title}</title>
+      <meta name="description" content={description} />
     </Head>
     <article>
-        <h1>{postData.title}</h1>
+        <h1>{title}</h1>
         <div>
-          <Date dateString={postData.date} />
+          <Date dateString={date} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </article>
   </Layout>
 }
