@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 import Link from 'next/link'
+import Date from './date'
 
 export default function PostsList({postsData}) {
   return (
