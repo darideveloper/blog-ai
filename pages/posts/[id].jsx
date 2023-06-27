@@ -9,6 +9,7 @@ import CategoriesButtons from '@/components/categories-buttons'
 import PostsList from '@/components/posts-list'
 
 import { getAllPostIds, getPostData, getRelatedPosts } from '@/lib/posts'
+import { getCleanId } from '@/lib/text'
 
 // Render current post
 export default function Post({ title, date, description, image, categories, contentHtml, relatedPosts }) {
@@ -18,6 +19,7 @@ export default function Post({ title, date, description, image, categories, cont
     return {
       name: category,
       counter: 0,
+      id: getCleanId(category),
     }
   })
 
