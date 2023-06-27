@@ -24,7 +24,7 @@ export default function Home({ allPostsData, postsCategories }) {
 
       {/* Render categories buttons */}
       <CategoriesButtons 
-        postsCategories={postsCategories} 
+        categories={postsCategories} 
       />
 
       {/* Render posts */}

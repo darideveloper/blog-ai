@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-export default function CategoriesButtons({postsCategories}) {
+export default function CategoriesButtons({categories, showCounter=true}) {
 
-  console.log (postsCategories)
+  console.log (categories)
 
   return (
     <section className="categories">
       <h2>Categories</h2>
       <ul>
-        {postsCategories.map(({ name, counter }) => (
+        {categories.map(({ name, counter }) => (
           <li
             key={name}
           >
@@ -17,9 +17,12 @@ export default function CategoriesButtons({postsCategories}) {
               <span>
                 {name}
               </span>
-              <span>
-                {counter}
-              </span>
+              {
+                showCounter &&
+                <span>
+                  {counter}
+                </span>
+              }
             </Link>
           </li>
         ))}
@@ -29,5 +32,6 @@ export default function CategoriesButtons({postsCategories}) {
 }
 
 CategoriesButtons.propTypes = {
-  postsCategories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  showCounter: PropTypes.bool,
 }
