@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import Date from '@/components/date'
-import Layout from '@/components/layout'
+import Layout from '@/layouts/root-layout'
 import CategoriesButtons from '@/components/categories-buttons'
 
 import { getAllPostIds, getPostData } from '@/lib/posts'

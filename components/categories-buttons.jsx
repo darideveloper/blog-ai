@@ -7,11 +7,11 @@ export default function CategoriesButtons({categories, showCounter=true}) {
     <section className="categories">
       <h2>Categories</h2>
       <ul>
-        {categories.map(({ name, counter }) => (
+        {categories.map(({ name, counter, id }) => (
           <li
             key={name}
           >
-            <Link href={`/categories/${name}`}>
+            <Link href={`/categories/${id}`}>
               <span>
                 {name}
               </span>

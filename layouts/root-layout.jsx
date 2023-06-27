@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import Head from "next/head"
 import { regular_font } from "@/lib/fonts"
 
@@ -8,11 +10,14 @@ export const metadata = {
   author: "Dari Developer",
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, extraTitle="" }) {
+
+  const title = metadata.title + (extraTitle && " | " +  extraTitle)
+
   return (
     <>
       <Head>
-        <title>{metadata.title}</title>
+        <title>{title}</title>
         <meta charset="UTF-8" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -22,4 +27,9 @@ export default function RootLayout({ children }) {
       <div className={regular_font.className}>{children}</div>
     </>
   )
+}
+
+RootLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+  extraTitle: PropTypes.string,
 }

@@ -1,67 +1,29 @@
 import PropTypes from 'prop-types'
 
-import Head from 'next/head'
-import Image from 'next/image'
+import PostsLayout from '@/layouts/posts-layout'
 
-import Date from '@/components/date'
-import Layout from '@/components/layout'
-import CategoriesButtons from '@/components/categories-buttons'
+import { getCategories, getPostsCategory } from '@/lib/categories'
 
-import { getAllPostIds, getPostData } from '@/lib/posts'
-
-// Render current post
-export default function Post({ title, date, description, image, categories, contentHtml }) {
-
-  // Format categories
-  const categoriesFormatted = categories.map((category) => {
-    return {
-      name: category,
-      counter: 0,
-    }
-  })
+export default function Category({ postsData, categories }) {
 
   return (
-    <Layout>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Head>
-      <article>
-
-        <header>
-          <h1>{title}</h1>
-
-          <div className="date">
-            <Date dateString={date} />
-          </div>
-
-          <div className="categories">
-            <CategoriesButtons 
-              categories={categoriesFormatted}
-              showCounter={false}
-            />
-
-          </div>
-
-          <div className="description">
-            <p>{description}</p>
-          </div>
-        </header>
-        <Image
-          src={image}
-          alt={`${title} imagen`}
-          width={1600}
-          height={900}
-        />
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      </article>
-    </Layout>
+    <PostsLayout
+      postsData={postsData}
+      categories={categories}
+    />      
   )
 }
 
 // Generate paths for posts
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const categories = await getCategories()
+  const paths = categories.map((category) => {
+    return {
+      params: {
+        id: category.id,
+      },
+    }
+  })
   return {
     paths,
     fallback: false,
@@ -70,19 +32,17 @@ export async function getStaticPaths() {
 
 // get data of the current post
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const postsData = await getPostsCategory(params.id)
+  const categories = await getCategories()
   return {
     props: {
-      ...postData,
+      postsData,
+      categories,
     },
   }
 }
 
-Post.propTypes = {
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  categories: PropTypes.array.isRequired,
-  contentHtml: PropTypes.string.isRequired,
+Category.propTypes = {
+  postsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
