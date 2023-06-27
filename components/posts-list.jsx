@@ -5,7 +5,7 @@ import Date from './date'
 
 export default function PostsList({postsData}) {
   return (
-    <section section >
+    <section className='Posts' >
       <h2>Blog</h2>
       <ul>
         {postsData.map(({ id, date, title }) => (
