@@ -1,8 +1,11 @@
+import PropTypes from 'prop-types'
+
 import Link from 'next/link'
 import Head from 'next/head'
 import Date from '../components/date'
-import Layout, { siteTitle } from '../components/layout'
 import CategoriesButtons from '../components/categories-buttons'
+import Layout, { siteTitle } from '../components/layout'
+
 import { getSortedPostsData, getPostsCategories } from '../lib/posts'
 
 export default function Home({ allPostsData, postsCategories }) {
@@ -53,4 +56,9 @@ export async function getStaticProps() {
       postsCategories,
     },
   }
+}
+
+Home.propTypes = {
+  allPostsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  postsCategories: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
