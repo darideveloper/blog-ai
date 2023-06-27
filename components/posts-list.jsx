@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Date from './date'
 
-export default function PostsList({postsData}) {
+export default function PostsList({postsData, title="blog"}) {
   return (
     <section className='Posts' >
-      <h2>Blog</h2>
+      <h2>{title}</h2>
       <ul>
         {postsData.map(({ id, date, title }) => (
           <li key={id}>
@@ -24,4 +24,5 @@ export default function PostsList({postsData}) {
 
 PostsList.propTypes = {
   postsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string,
 }

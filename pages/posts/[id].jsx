@@ -6,11 +6,12 @@ import Image from 'next/image'
 import Date from '@/components/date'
 import RootLayout from '@/layouts/root-layout'
 import CategoriesButtons from '@/components/categories-buttons'
+import PostsList from '@/components/posts-list'
 
-import { getAllPostIds, getPostData } from '@/lib/posts'
+import { getAllPostIds, getPostData, getRelatedPosts } from '@/lib/posts'
 
 // Render current post
-export default function Post({ title, date, description, image, categories, contentHtml }) {
+export default function Post({ title, date, description, image, categories, contentHtml, relatedPosts }) {
 
   // Format categories
   const categoriesFormatted = categories.map((category) => {
@@ -49,6 +50,7 @@ export default function Post({ title, date, description, image, categories, cont
             <p>{description}</p>
           </div>
         </header>
+
         <Image
           src={image}
           alt={`${title} imagen`}
@@ -57,6 +59,14 @@ export default function Post({ title, date, description, image, categories, cont
         />
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
+
+      <aside>
+        <PostsList 
+          postsData={relatedPosts}
+          title="Posts relacionados"
+        />
+      </aside>
+
     </RootLayout>
   )
 }
@@ -73,9 +83,11 @@ export async function getStaticPaths() {
 // get data of the current post
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
+  const relatedPosts = await getRelatedPosts(params.id)
   return {
     props: {
       ...postData,
+      relatedPosts
     },
   }
 }
@@ -87,4 +99,5 @@ Post.propTypes = {
   image: PropTypes.string.isRequired,
   categories: PropTypes.array.isRequired,
   contentHtml: PropTypes.string.isRequired,
+  relatedPosts: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
