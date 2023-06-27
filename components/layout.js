@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { regular_font } from "@/lib/fornts"
+import { regular_font } from "@/lib/fonts"
 
 export const metadata = {
   title: 'Dari Dev Blog',

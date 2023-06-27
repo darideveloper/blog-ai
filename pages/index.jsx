@@ -2,9 +2,10 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Date from '../components/date'
 import Layout, { siteTitle } from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
+import CategoriesButtons from '../components/categories-buttons'
+import { getSortedPostsData, getPostsCategories } from '../lib/posts'
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, postsCategories }) {
   return (
     <Layout home>
       <Head>
@@ -17,6 +18,11 @@ export default function Home({ allPostsData }) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
+
+      {/* Render categories buttons */}
+      <CategoriesButtons 
+        postsCategories={postsCategories} 
+      />
 
       {/* Render posts */}
       <section>
@@ -40,9 +46,11 @@ export default function Home({ allPostsData }) {
 // Get props to gerneate static HTML
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
+  const postsCategories = await getPostsCategories()
   return {
     props: {
       allPostsData,
+      postsCategories,
     },
   }
 }
