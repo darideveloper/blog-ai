@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 
 import Link from 'next/link'
 import Head from 'next/head'
-import Date from '../components/date'
-import CategoriesButtons from '../components/categories-buttons'
-import Layout, { siteTitle } from '../components/layout'
+import Date from '@/components/date'
+import CategoriesButtons from '@/components/categories-buttons'
+import Layout, { siteTitle } from '@/components/layout'
 
 import { getSortedPostsData, getPostsCategories } from '../lib/posts'
 
