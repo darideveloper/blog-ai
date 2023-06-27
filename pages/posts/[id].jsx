@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import Date from '@/components/date'
-import Layout from '@/layouts/root-layout'
+import RootLayout from '@/layouts/root-layout'
 import CategoriesButtons from '@/components/categories-buttons'
 
 import { getAllPostIds, getPostData } from '@/lib/posts'
@@ -21,9 +21,10 @@ export default function Post({ title, date, description, image, categories, cont
   })
 
   return (
-    <Layout>
+    <RootLayout
+      extraTitle={title}
+    >
       <Head>
-        <title>{title}</title>
         <meta name="description" content={description} />
       </Head>
       <article>
@@ -55,7 +56,7 @@ export default function Post({ title, date, description, image, categories, cont
         />
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
-    </Layout>
+    </RootLayout>
   )
 }
 
