@@ -6,13 +6,14 @@ import { regular_font } from "@/lib/fonts"
 export const metadata = {
   title: 'Dari Dev Blog',
   description: 'Tu blog sin publicidad de Anime, Programación, Tecnología y más',
-  keywords: "anime, tech, python, code",
+  keywords: ["anime", "tech", "code"],
   author: "Dari Developer",
 }
 
-export default function RootLayout({ children, extraTitle="" }) {
+export default function RootLayout({ children, extraTitle="", extraKeywords=[] }) {
 
   const title = metadata.title + (extraTitle && " | " +  extraTitle)
+  const keyword = metadata.keywords.concat(extraKeywords).join(", ")
 
   return (
     <>
@@ -20,7 +21,7 @@ export default function RootLayout({ children, extraTitle="" }) {
         <title>{title}</title>
         <meta charset="UTF-8" />
         <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
+        <meta name="keywords" content={keyword} />
         <meta name="author" content={metadata.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
@@ -32,4 +33,5 @@ export default function RootLayout({ children, extraTitle="" }) {
 RootLayout.propTypes = {
   children: PropTypes.node.isRequired,
   extraTitle: PropTypes.string,
+  extraKeywords: PropTypes.arrayOf(PropTypes.string),
 }

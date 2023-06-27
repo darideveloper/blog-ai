@@ -23,6 +23,7 @@ export default function Post({ title, date, description, image, categories, cont
   return (
     <RootLayout
       extraTitle={title}
+      extraKeywords={categories}
     >
       <Head>
         <meta name="description" content={description} />
