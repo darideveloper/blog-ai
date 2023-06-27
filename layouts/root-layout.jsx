@@ -1,14 +1,9 @@
 import PropTypes from "prop-types"
 
 import Head from "next/head"
-import { regular_font } from "@/lib/fonts"
 
-export const metadata = {
-  title: 'Dari Dev Blog',
-  description: 'Tu blog sin publicidad de Anime, Programación, Tecnología y más',
-  keywords: ["anime", "tech", "code"],
-  author: "Dari Developer",
-}
+import { regular_font } from "@/lib/fonts"
+import { metadata } from "@/lib/metadata"
 
 export default function RootLayout({ children, extraTitle="", extraKeywords=[] }) {
 
