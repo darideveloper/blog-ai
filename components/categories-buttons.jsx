@@ -3,8 +3,6 @@ import Link from 'next/link'
 
 export default function CategoriesButtons({categories, showCounter=true}) {
 
-  console.log (categories)
-
   return (
     <section className="categories">
       <h2>Categories</h2>

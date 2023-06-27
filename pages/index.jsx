@@ -6,15 +6,16 @@ import Date from '@/components/date'
 import CategoriesButtons from '@/components/categories-buttons'
 import Layout, { siteTitle } from '@/components/layout'
 
-import { getSortedPostsData, getPostsCategories } from '../lib/posts'
+import { getSortedPostsData } from '@/lib/posts'
+import { getCategories } from '@/lib/categories'
 
-export default function Home({ allPostsData, postsCategories }) {
+export default function Home({ allPostsData, categories }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section >
+      <section className='about' >
         <p>[Your Self Introduction] !!!!!</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
@@ -24,7 +25,7 @@ export default function Home({ allPostsData, postsCategories }) {
 
       {/* Render categories buttons */}
       <CategoriesButtons 
-        categories={postsCategories} 
+        categories={categories} 
       />
 
       {/* Render posts */}
@@ -49,16 +50,16 @@ export default function Home({ allPostsData, postsCategories }) {
 // Get props to gerneate static HTML
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
-  const postsCategories = await getPostsCategories()
+  const categories = await getCategories()
   return {
     props: {
       allPostsData,
-      postsCategories,
+      categories,
     },
   }
 }
 
 Home.propTypes = {
   allPostsData: PropTypes.arrayOf(PropTypes.object).isRequired,
-  postsCategories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
