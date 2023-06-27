@@ -3,7 +3,7 @@ title: 'When to Use Static Generation v.s. Server-side Rendering 3'
 date: '2020-01-02'
 description: 'Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.'
 image: '/images/static-vs-server.png'
-categories: ['React']
+categories: ['React', "frontend"]
 ---
 
 We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
