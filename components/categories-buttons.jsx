@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-export default function CategoriesButtons({categories, showCounter=true}) {
+export default function CategoriesButtons({ categories, showCounter = true, currentCategory='all' }) {
 
   return (
     <section className="categories">
@@ -11,7 +11,13 @@ export default function CategoriesButtons({categories, showCounter=true}) {
           <li
             key={name}
           >
-            <Link href={`/categories/${id}`}>
+
+            <Link
+              href={`/categories/${id}`}
+
+              /* Detect if the category its active */
+              className={currentCategory === id ? 'active' : ''}
+            >
               <span>
                 {name}
               </span>
@@ -32,4 +38,5 @@ export default function CategoriesButtons({categories, showCounter=true}) {
 CategoriesButtons.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
   showCounter: PropTypes.bool,
+  currentCategory: PropTypes.string,
 }

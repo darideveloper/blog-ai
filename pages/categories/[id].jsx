@@ -4,12 +4,13 @@ import PostsLayout from '@/layouts/posts-layout'
 
 import { getCategories, getPostsCategory } from '@/lib/categories'
 
-export default function Category({ postsData, categories }) {
+export default function Category({ postsData, categories, currentCategory }) {
 
   return (
     <PostsLayout
       postsData={postsData}
       categories={categories}
+      currentCategory={currentCategory}
     />      
   )
 }
@@ -38,6 +39,7 @@ export async function getStaticProps({ params }) {
     props: {
       postsData,
       categories,
+      currentCategory: params.id,
     },
   }
 }
@@ -45,4 +47,5 @@ export async function getStaticProps({ params }) {
 Category.propTypes = {
   postsData: PropTypes.arrayOf(PropTypes.object).isRequired,
   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  currentCategory: PropTypes.string.isRequired,
 }
