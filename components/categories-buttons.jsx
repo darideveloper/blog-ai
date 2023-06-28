@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-export default function CategoriesButtons({ categories, showCounter = true, currentCategory='all' }) {
+export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all' }) {
 
   return (
-    <section className="categories">
-      <h2>Categories</h2>
-      <ul>
+    <section className="categories container mx-auto">
+      <h2 className='hidden'>Categorias</h2>
+      <ul
+        className={`
+          flex flex-wrap justify-start gap-1
+        `}
+      >
         {categories.map(({ name, counter, id }) => (
           <li
             key={name}
@@ -16,7 +20,19 @@ export default function CategoriesButtons({ categories, showCounter = true, curr
               href={`/categories/${id}`}
 
               /* Detect if the category its active */
-              className={currentCategory === id ? 'active' : ''}
+              className={`
+                ${currentCategory === id
+                  ?
+                  'active bg-accent text-white'
+                  :
+                  `bg-grey-light text-white-light
+                  hover:bg-accent hover:opacity-60 hover:text-white duration-200`
+                }
+                px-6 py-2
+                inline-block
+                rounded-full
+                
+              `}
             >
               <span>
                 {name}
@@ -24,7 +40,7 @@ export default function CategoriesButtons({ categories, showCounter = true, curr
               {
                 showCounter &&
                 <span>
-                  {counter}
+                  &nbsp;({counter})
                 </span>
               }
             </Link>
