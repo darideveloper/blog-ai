@@ -17,7 +17,7 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
     Header: {
       links: [
         { href: "https://www.darideveloper.com/", text: "Portafolio" },
-        { href: "https://www.darideveloper.com/contacto", text: "Contacto" },
+        { href: "/#contact", text: "Contacto" },
       ]
     }
   }

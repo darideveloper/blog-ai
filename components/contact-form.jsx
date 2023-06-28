@@ -7,12 +7,14 @@ import ButtonWrapper from "./button-wrapper"
 export default function ContactForm() {
   return (
     <div className={`
-      w-full
       contact-form
+      w-full
       container mx-auto
       mb-5
       md:max-w-4xl
-    `}>
+    `}
+    id='contact'
+    >
 
 
       <div className={`
