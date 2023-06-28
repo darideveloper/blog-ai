@@ -6,9 +6,9 @@ import Header from "@/components/header"
 import { regularFont } from "@/lib/fonts"
 import { metadata } from "@/lib/metadata"
 
-export default function RootLayout({ children, extraTitle="", extraKeywords=[] }) {
+export default function RootLayout({ children, extraTitle = "", extraKeywords = [] }) {
 
-  const title = metadata.title + (extraTitle && " | " +  extraTitle)
+  const title = metadata.title + (extraTitle && " | " + extraTitle)
   const keyword = metadata.keywords.concat(extraKeywords).join(", ")
 
   // Components data
@@ -32,10 +32,12 @@ export default function RootLayout({ children, extraTitle="", extraKeywords=[] }
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <div className={`${regularFont.className} bg-grey text-white-light`}>
-        <Header 
+        <Header
           {...data.Header}
         />
-        {children}
+        <main>
+          {children}
+        </main>
       </div>
     </>
   )
