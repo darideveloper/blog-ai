@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 
 import Head from "next/head"
 import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 import { regularFont } from "@/lib/fonts"
 import { metadata } from "@/lib/metadata"
@@ -31,13 +32,14 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
         <meta name="author" content={metadata.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className={`${regularFont.className} bg-grey text-white-light`}>
+      <div className={`${regularFont.className} text-white-light`}>
         <Header
           {...data.Header}
         />
         <main>
           {children}
         </main>
+        <Footer />
       </div>
     </>
   )

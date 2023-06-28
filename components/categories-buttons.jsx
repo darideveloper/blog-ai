@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
+import ButtonWrapper from './button-wrapper'
 
 export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all' }) {
 
@@ -15,35 +16,28 @@ export default function CategoriesButtons({ categories, showCounter = true, curr
           <li
             key={name}
           >
-
-            <Link
-              href={`/categories/${id}`}
-
-              /* Detect if the category its active */
-              className={`
-                ${currentCategory === id
-                  ?
-                  'active bg-accent text-white'
-                  :
-                  `bg-grey-light text-white-light
-                  hover:bg-accent hover:opacity-60 hover:text-white duration-200`
-                }
-                px-6 py-2
-                inline-block
-                rounded-full
-                
-              `}
+            <ButtonWrapper
+              active={currentCategory === id}
+              hover={currentCategory !== id}
             >
-              <span>
-                {name}
-              </span>
-              {
-                showCounter &&
+              <Link
+                href={`/categories/${id}`}
+                className={`
+                  w-full h-full inline-block
+                  px-6 py-2  
+                `}
+              >
                 <span>
-                  &nbsp;({counter})
+                  {name}
                 </span>
-              }
-            </Link>
+                {
+                  showCounter &&
+                  <span>
+                    &nbsp;({counter})
+                  </span>
+                }
+              </Link>
+            </ButtonWrapper>
           </li>
         ))}
       </ul>
