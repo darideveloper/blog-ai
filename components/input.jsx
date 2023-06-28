@@ -2,7 +2,7 @@ import propTypes from 'prop-types'
 
 import { titleFont } from '@/lib/fonts'
 
-export default function Input ({label, placeholder="", type="text"}) {
+export default function Input ({label, placeholder="", type="text", required=true}) {
 
   const id = label.toLowerCase().replace(" ", "-")
 
@@ -23,6 +23,7 @@ export default function Input ({label, placeholder="", type="text"}) {
         id={id} 
         placeholder={placeholder} 
         autoComplete='off'
+        required={required}
         className={`
           text-md
           block
@@ -42,4 +43,5 @@ Input.propTypes = {
   label: propTypes.string.isRequired,
   placeholder: propTypes.string,
   type: propTypes.string,
+  required: propTypes.bool
 }
