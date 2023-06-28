@@ -1,0 +1,30 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+$grey: #1d1d1f
+$grey-light: #313031
+$white: #e6e6e6
+$white-light: #9497a1
+$accent: #0066cc
+
+.debug
+	border: 1px solid red
+
+svg
+	width: 100%
+
+.bg-gradiant
+	background: linear-gradient(-15deg, $grey, rgba($accent, 0.05), $grey, $grey, rgba($accent, 0.1), $grey, rgba($accent, 0.02),)
+	background-size: 400% 400%
+	animation: gradient 15s ease infinite
+
+@keyframes gradient
+	0%
+		background-position: 0% 50%
+
+	50%
+		background-position: 100% 50%
+
+	100%
+		background-position: 0% 50%

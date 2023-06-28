@@ -18,10 +18,18 @@ export default function Header({ links }) {
       className={`
         mx-auto
         text-white
-        items-center justify-between py-3 mb-5
-        md:container md:flex border-b-2 border-grey-light border-opacity-20
+        items-center justify-between py-4 mb-5
+        md:container md:flex
       `}
     >
+
+      <div className={`
+        bg-gradiant
+        fixed top-0 left-0 z-0
+        w-full h-0
+        md:h-20
+      `}></div>
+
       <div className={`
         container mx-auto
         w-full
@@ -49,6 +57,7 @@ export default function Header({ links }) {
             ${titleFont.className}
             font-bold
             text-2xl
+            z-10
             md:text-lg md:ml-2
             lg:text-2xl
           `}
