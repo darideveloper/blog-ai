@@ -75,7 +75,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
                 className={`
                   w-full 
                   md:opacity-60 md:blur-xs
-                  md:group-hover:opacity-80 md:group-hover:blur-0 duration-500
+                  md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
                   md:w-80
                   group-first:md:w-full
                 `}
