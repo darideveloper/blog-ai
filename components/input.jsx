@@ -31,6 +31,7 @@ export default function Input ({label, placeholder="", type="text"}) {
           w-full my-3 py-1 px-3
           outline-none 
           focus:opacity-100 duration-200
+          hover:pl-5
         `}
       />
     </label>
