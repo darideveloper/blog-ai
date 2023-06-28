@@ -1,5 +1,7 @@
 import PropTypes from "prop-types"
 
+import { useEffect } from "react"
+
 import Head from "next/head"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -9,6 +11,7 @@ import { metadata } from "@/lib/metadata"
 
 export default function RootLayout({ children, extraTitle = "", extraKeywords = [] }) {
 
+  // Get metadata
   const title = metadata.title + (extraTitle && " | " + extraTitle)
   const keyword = metadata.keywords.concat(extraKeywords).join(", ")
 

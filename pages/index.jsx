@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types'
 
-import CategoriesButtons from '@/components/categories-buttons'
 import PostsLayout from '@/layouts/posts-layout'
-import Hero from '@/components/hero'
-import PostsList from '@/components/posts-list'
 
 import { getSortedPostsData } from '@/lib/posts'
 import { getCategories } from '@/lib/categories'

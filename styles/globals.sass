@@ -7,6 +7,7 @@ $grey-light: #313031
 $white: #e6e6e6
 $white-light: #9497a1
 $accent: #0066cc
+$accent-light: #3897f5
 
 body
 	margin: 0
@@ -43,6 +44,15 @@ input
 	background: $accent
 	border-radius: 10px
 
+.swal2-confirm.swal2-styled
+	background-color: $accent !important
+	border: 1px solid $accent !important
+	color: $white !important
+	transition-duration: 0.5s !important
+	opacity: 1
+
+	&:hover
+		opacity: 0.8
 
 @keyframes gradient
 	0%

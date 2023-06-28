@@ -1,10 +1,25 @@
+import Swal from 'sweetalert2'
+
 import { titleFont } from '@/lib/fonts'
 
 import Image from 'next/image'
 import Input from './input'
 import ButtonWrapper from "./button-wrapper"
 
+import { useRouter } from 'next/router'
+
 export default function ContactForm() {
+
+  const router = useRouter()
+
+  function showAlert() {
+    Swal.fire({
+      icon: 'Done',
+      title: 'Mensaje enviado',
+      text: 'Te contactaré lo más pronto posible',
+    })
+  }
+
   return (
     <div className={`
       contact-form
@@ -13,9 +28,13 @@ export default function ContactForm() {
       mb-5
       md:max-w-4xl
     `}
-    id='contact'
+      id='contact'
     >
-
+      {
+        router.query.thanks && (
+          showAlert()
+        )
+      }
 
       <div className={`
         content
@@ -36,7 +55,8 @@ export default function ContactForm() {
         />
 
         <form
-          action=""
+          action="https://darideveloper.pythonanywhere.com/contactforms-api/"
+          method="POST"
           className={`
           w-full
           md:px-5
@@ -52,7 +72,7 @@ export default function ContactForm() {
             Contáctame
           </h2>
 
-          <div 
+          <div
             className={`
               row
               flex flex-col gap-0
@@ -89,6 +109,10 @@ export default function ContactForm() {
               Enviar
             </button>
           </ButtonWrapper>
+
+          <input type="hidden" name="user" id="user" value="daridev" />
+          <input type="hidden" name="api_key" id="api_key" value="77c341d0397b984f69ef82b49143a5cd" />
+          <input type="hidden" name="redirect" id="redirect" value="https://blog.darideveloper.com/?thanks=true" />
 
         </form>
       </div>
