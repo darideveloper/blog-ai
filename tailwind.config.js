@@ -19,6 +19,10 @@ module.exports = {
         "white": "#e6e6e6",
         "white-light": "#9497a1",
         "accent": "#0066cc",
+        "accent-light": "#3897f5",
+      },
+      blur: {
+        xs: '2px',
       }
     },
   },

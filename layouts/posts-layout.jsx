@@ -21,6 +21,7 @@ export default function PostsLayout({ extraTitle = "", categories, postsData, cu
 
       <PostsList
         postsData={postsData}
+        isHome={true}
       />
     </RootLayout>
   )

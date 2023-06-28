@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all' }) {
 
   return (
-    <section className="categories container mx-auto">
+    <section className="categories container mx-auto px-2">
       <h2 className='hidden'>Categorias</h2>
       <ul
         className={`

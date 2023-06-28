@@ -1,20 +1,88 @@
 import PropTypes from 'prop-types'
 
+import { titleFont } from '@/lib/fonts'
+
 import Link from 'next/link'
 import Date from './date'
+import Image from 'next/image'
 
-export default function PostsList({postsData, title="blog"}) {
+export default function PostsList({ postsData, title = "Posts", isHome = false }) {
+
   return (
-    <section className='Posts' >
-      <h2>{title}</h2>
-      <ul>
-        {postsData.map(({ id, date, title }) => (
-          <li key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
-            <br />
-            <small>
-              <Date dateString={date} />
-            </small>
+    <section className='Posts container mx-auto mb-5 px-2 mt-10' >
+      <h2
+        className={`
+          ${title == "Posts" ? 'hidden' : ''}
+          text-3xl font-bold 
+        `}
+      >{title}</h2>
+      <ul
+        className=''
+      >
+        {postsData.map(({ id, date, title, image, description }) => (
+          <li
+            key={id}
+            className={`
+              group
+              mb-10 mx-auto
+            `}
+          >
+
+            <Link
+              href={`/posts/${id}`}
+              className={`
+                w-full
+                flex flex-col items-start justify-start 
+                gap-4
+                md:flex-row-reverse md:w-full md:justify-between md:items-center
+                group-first:md:flex-col
+                lg:items-start
+              `}
+            >
+              <div className={`
+                  text 
+                  w-full
+                  `}
+              >
+                <small>
+                  <Date dateString={date} />
+                </small>
+
+                <h3
+                  className={`
+                  py-2 text-white text-xl
+                  group-hover:text-accent-light duration-200
+                  ${titleFont.className}
+                `}
+                >
+                  {title}
+                </h3>
+
+                <p
+                  className={`
+                    group-hover:translate-x-4 duration-200
+                  `}
+                >
+                  {description}
+                </p>
+              </div>
+
+              <Image
+                src={image}
+                alt={title}
+                width={1600}
+                height={900}
+                className={`
+                  w-full 
+                  md:opacity-60 md:blur-xs
+                  md:group-hover:opacity-80 md:group-hover:blur-0 duration-500
+                  md:w-80
+                  group-first:md:w-full
+                `}
+              />
+            </Link>
+
+
           </li>
         ))}
       </ul>
@@ -25,4 +93,5 @@ export default function PostsList({postsData, title="blog"}) {
 PostsList.propTypes = {
   postsData: PropTypes.arrayOf(PropTypes.object).isRequired,
   title: PropTypes.string,
+  isHome: PropTypes.bool
 }

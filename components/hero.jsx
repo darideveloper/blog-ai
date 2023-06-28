@@ -7,7 +7,7 @@ export default function Hero() {
     <section className='hero container mx-auto my-10' >
       <p 
         className={`
-          text-2xl text-center text-white
+          text-2xl text-center text-white px-2
           ${titleFont.className}
         `}
       >
