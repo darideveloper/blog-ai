@@ -6,8 +6,6 @@ image: '/imgs/git-vs-github.webp'
 categories: ['git', "github", "desarrollo"]
 ---
 
-# Git vs Github, ¿Sabes cual es la diferencia?
-
 ![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-sabes-cual-es-la-diferencia.webp)
 
 
@@ -61,7 +59,7 @@ Puedes seguir este tutorial para [instalar git en windows](./instalar-git-window
 
 ![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-meme3.webp)
 
-Github (la página con un [gato-pulpo-mutante de la disformidad, como mascota](https://cdn.svgporn.com/logos/github-octocat.svg)) es una plataforma que nos permite **almacenar nuestros repositorios de git en la nube**, de tal manera que podamos **acceder a ellos desde cualquier computadora**, y **compartirlos con otras personas**.
+Github (la página con un [gato-pulpo-mutante-de-la-disformidad](https://cdn.svgporn.com/logos/github-octocat.svg)) como mascota es una plataforma que nos permite **almacenar nuestros repositorios de git en la nube**, de tal manera que podamos **acceder a ellos desde cualquier computadora**, y **compartirlos con otras personas**.
 
 Basicamente, como **una red social para programadores**.
 

@@ -63,3 +63,60 @@ input
 
 	100%
 		background-position: 0% 50%
+
+.post .content
+	h1, h2, h3
+		color: $white
+		margin-top: 2.5rem
+		font-weight: bold
+		margin-bottom: 1rem
+
+	h1
+		font-size: 2rem
+		margin-bottom: 2rem
+
+	h2 
+		font-size: 1.5rem
+
+	h3
+		font-size: 1.25rem
+
+	img
+		width: 100%
+		height: auto
+		margin: 2rem auto
+		border-radius: 10px
+		max-width: 600px
+
+	ol, ul
+		margin: 2rem 0
+
+		> li
+			margin-bottom: 0.5rem
+			margin-left: 1rem
+
+	ol > li
+		list-style: decimal
+	
+	ul > li
+		list-style: circle
+
+	a
+		color: $accent
+		text-decoration: none
+		transition-duration: 0.5s
+
+		&:hover
+			color: $accent-light
+
+	strong
+		background-color: $grey-light
+
+	p
+		margin-bottom: 1rem
+
+	@media (min-width: 768px)
+		
+		img
+			margin: 2rem 0
+	

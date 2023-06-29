@@ -20,7 +20,7 @@ export default function Post({ title, date, description, image, categories, cont
   const { setContacts } = useContext(ContactsContext)
 
   // Save contacts in context when component load
-  useEffect (() => {
+  useEffect(() => {
     setContacts(contacts)
   }, [])
 
@@ -41,39 +41,72 @@ export default function Post({ title, date, description, image, categories, cont
       <Head>
         <meta name="description" content={description} />
       </Head>
-      <article>
+      <article
+        className={`
+          post container 
+          mx-auto
+          px-5
+          `}
+          >
 
-        <header>
-          <h1>{title}</h1>
+        <div className={`
+          relative
+          header-wrapper
+        `}>
 
-          <div className="date">
-            <Date dateString={date} />
-          </div>
+          <Image
+            src={image}
+            alt={`${title} imagen`}
+            width={1600}
+            height={900}
+            className={`
+                opacity-20
+                -z-10
+                blur-sm
+              `}
+          />
 
-          <div className="categories">
-            <CategoriesButtons 
-              categories={categoriesFormatted}
-              showCounter={false}
-            />
+          <header
+            className={`
+            bottom-0 left-0
+            sm:absolute sm:px-10
+            `}
+          >
 
-          </div>
+            <div className="date my-2 ml-3">
+              <Date dateString={date} />
+            </div>
 
-          <div className="description">
-            <p>{description}</p>
-          </div>
-        </header>
+            <div className="categories">
+              <CategoriesButtons
+                categories={categoriesFormatted}
+                showCounter={false}
+              />
+            </div>
 
-        <Image
-          src={image}
-          alt={`${title} imagen`}
-          width={1600}
-          height={900}
-        />
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            <h1
+              className={`
+                text-3xl
+                font-bold
+                color-white
+                mb-10 mt-5
+              `}
+            >
+              {title}
+            </h1>
+
+          </header>
+        </div>
+
+
+        <div className="content max-w-5xl mx-auto text-lg">
+          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        </div>
+
       </article>
 
       <aside>
-        <PostsList 
+        <PostsList
           postsData={relatedPosts}
           title="Posts relacionados"
         />
@@ -96,10 +129,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   const relatedPosts = await getRelatedPosts(params.id)
-  
+
   // Get portfolio data 
   const contacts = await getContacts()
-  
+
   return {
     props: {
       ...postData,
