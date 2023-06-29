@@ -5,7 +5,7 @@ import ContactIcons from "@/components/contact-icons"
 export default function Footer () {
   return (
     <footer
-      className="px-2"
+      className="px-2 container mx-auto"
     >
       <div 
         className={`
