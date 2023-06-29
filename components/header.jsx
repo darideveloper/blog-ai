@@ -92,20 +92,19 @@ export default function Header({ links }) {
       <nav
         className={`
           ${navClass}
-          fixed top-14 left-0 z-10
+          absolute top-14 left-0 z-10
           bg-grey-light
           w-full mt-2
           text-center
           duration-200
           overflow-hidden
           md:h-auto md:bg-transparent md:w-auto md:text-left md:mt-0 md:static
-
         `}
       >
         <ul
           className={`
             flex items-center justify-center flex-col
-            p-2
+            pt-4
             md:flex-row md:p-0
           `}>
           {links.map((link, index) => (
