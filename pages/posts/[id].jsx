@@ -10,9 +10,19 @@ import PostsList from '@/components/posts-list'
 
 import { getAllPostIds, getPostData, getRelatedPosts } from '@/lib/posts'
 import { getCleanId } from '@/lib/text'
+import { useContext, useEffect } from 'react'
+import { getContacts } from '@/lib/portfolio'
+import { ContactsContext } from '@/contexts/contacts-context'
 
 // Render current post
-export default function Post({ title, date, description, image, categories, contentHtml, relatedPosts }) {
+export default function Post({ title, date, description, image, categories, contentHtml, relatedPosts, contacts }) {
+
+  const { setContacts } = useContext(ContactsContext)
+
+  // Save contacts in context when component load
+  useEffect (() => {
+    setContacts(contacts)
+  }, [])
 
   // Format categories
   const categoriesFormatted = categories.map((category) => {
@@ -86,10 +96,15 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
   const relatedPosts = await getRelatedPosts(params.id)
+  
+  // Get portfolio data 
+  const contacts = await getContacts()
+  
   return {
     props: {
       ...postData,
-      relatedPosts
+      relatedPosts,
+      contacts
     },
   }
 }
@@ -102,4 +117,5 @@ Post.propTypes = {
   categories: PropTypes.array.isRequired,
   contentHtml: PropTypes.string.isRequired,
   relatedPosts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
