@@ -27,6 +27,7 @@ export default function ContactForm() {
       container mx-auto
       mb-5
       md:max-w-4xl
+      lg:mx-0
     `}
       id='contact'
     >

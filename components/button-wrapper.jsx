@@ -1,6 +1,6 @@
-import PropTypes from "react"
+import PropTypes from 'prop-types'
 
-export default function ButtonWrapper({children, extraClasses = "", active=false, hover=true}) {
+export default function ButtonWrapper({children, extraClasses="", active=false, hover=true}) {
   
   // Setup button styles
   let styles = ''
