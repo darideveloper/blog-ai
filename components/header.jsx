@@ -16,6 +16,7 @@ export default function Header({ links }) {
   return (
     <header
       className={`
+        relative
         mx-auto
         text-white
         items-center justify-between py-4
@@ -25,12 +26,12 @@ export default function Header({ links }) {
       `}
     >
 
-      <div className={`
+      {/* <div className={`
         bg-gradiant
         absolute top-0 left-0 z-0
         w-full h-0
         md:h-20
-      `}></div>
+      `}></div> */}
 
       <div className={`
         container mx-auto
@@ -40,10 +41,14 @@ export default function Header({ links }) {
         lg:w-64
       `}>
 
-        <ButtonIcon >
-          <Link
-            href="/"
-          >
+        <Link
+          href="/"
+          className={`
+            group
+            flex items-center justify-between
+          `}
+        >
+          <ButtonIcon >
             <Image
               src="/imgs/logo.png"
               alt="logo"
@@ -51,26 +56,40 @@ export default function Header({ links }) {
               height={100}
               className={`w-full`}
             />
-          </Link>
-        </ButtonIcon>
+          </ButtonIcon>
 
-        <h1
-          className={`
-            font-bold
-            text-2xl
-            z-10
-            flex flex-row items-center justify-center gap-3
-            md:text-lg md:ml-3 md:flex-col md:gap-0 md:items-start
-            lg:text-2xl lg:gap-3 lg:flex-row
-          `}
-        >
-          <span>
-            Dari Dev
-          </span>
-          <span>
-            Blog
-          </span>
-        </h1>
+          <div 
+            className={`
+              title-wrapper
+              absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+              w-full
+              -z-10
+              md:static md:translate-x-0 md:translate-y-0
+            `}
+          >
+
+            <p
+              className={`
+                font-bold
+                text-2xl
+                z-10
+                flex flex-row items-center justify-center gap-3
+                md:text-lg md:ml-3 md:flex-col md:gap-0 md:items-start
+                lg:text-2xl lg:gap-3 lg:flex-row
+                group-hover:translate-x-2 duration-200
+              `}
+            >
+              <span>
+                Dari Dev
+              </span>
+              <span>
+                Blog
+              </span>
+            </p>
+          </div>
+
+        </Link>
+
 
         <ButtonIcon
           onClick={() => setIsMenuOpen(!isMenuOpen)}
