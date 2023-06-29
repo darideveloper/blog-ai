@@ -1,14 +1,14 @@
 import PropTypes from "prop-types"
 
-export default function ButtonIcon ({children, extraClasses = "", onClick=() => {}, scale=true}) {
+export default function ButtonIcon ({children, extraClasses = "", onClick=() => {}, scale=true, enable=true}) {
   return (
     <button
       onClick={onClick}
       className={`
         fill-white
         w-10
-        opacity-60
-        hover:opacity-80 ${scale && 'hover:scale-110'} duration-500
+        ${enable ? "opacity-60 hover:opacity-80": "opacity-20 cursor-default"}
+        ${enable && scale && 'hover:scale-110'} duration-500
         relative
         ${extraClasses}
       `}
@@ -23,4 +23,5 @@ ButtonIcon.propTypes = {
   extraClasses: PropTypes.string,
   onClick: PropTypes.func,
   scale: PropTypes.bool,
+  enable: PropTypes.bool
 }

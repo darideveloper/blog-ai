@@ -5,8 +5,52 @@ import { titleFont } from '@/lib/fonts'
 import Link from 'next/link'
 import Date from './date'
 import Image from 'next/image'
+import Paginator from './paginator'
+
+import { useState, useEffect } from 'react'
 
 export default function PostsList({ postsData, title = "Posts", isHome = false }) {
+
+  const postPerPage = 6
+  const maxPages = Math.ceil(postsData.length / postPerPage)
+
+  // Split post in groups of postPerPage
+  let postGroups = [...Array(maxPages)].map(() => [])
+  let currentGroupId = 0
+  for (const post of postsData) {
+    if (postGroups[currentGroupId].length == postPerPage) {
+      currentGroupId++
+    } 
+    postGroups[currentGroupId].push(post)
+  }
+  
+  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPosts, setCurrentPosts] = useState(postGroups[currentPage - 1])
+
+  // Update currentPosts when currentPage changes
+  useState(() => {
+    setCurrentPosts(postGroups[currentPage - 1])
+  }, [currentPage])
+
+  function incrementPage() {
+    if (currentPage < maxPages) {
+      setCurrentPage(currentPage + 1)
+      window.scrollTo(0, 0)
+    }
+
+  }
+
+  function decrementPage() {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1)
+      window.scrollTo(0, 0)
+    }
+  }
+
+  // Update currentPosts when postsData changes
+  useEffect (() => {
+    setCurrentPosts (postGroups[currentPage - 1])
+  }, [currentPage])
 
   return (
     <section className='Posts container mx-auto mb-5 px-2 mt-10' >
@@ -16,10 +60,26 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
           text-3xl font-bold 
         `}
       >{title}</h2>
+
+      <button
+        onClick={() => {
+          setCurrentPage(currentPage + 1)
+        }}
+      >
+        click me
+      </button>
+
+      <Paginator 
+        currentPage={currentPage}
+        maxPages={maxPages}
+        incrementPage={incrementPage}
+        decrementPage={decrementPage}
+      />
+
       <ul
         className=''
       >
-        {postsData.map(({ id, date, title, image, description }) => (
+        {currentPosts.map(({ id, date, title, image, description }) => (
           <li
             key={id}
             className={`
@@ -86,6 +146,13 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
           </li>
         ))}
       </ul>
+
+      <Paginator 
+        currentPage={currentPage}
+        maxPages={maxPages}
+        incrementPage={incrementPage}
+        decrementPage={decrementPage}
+      />
     </section >
   )
 }
