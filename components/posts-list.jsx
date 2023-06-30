@@ -61,14 +61,6 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
         `}
       >{title}</h2>
 
-      <button
-        onClick={() => {
-          setCurrentPage(currentPage + 1)
-        }}
-      >
-        click me
-      </button>
-
       <Paginator 
         currentPage={currentPage}
         maxPages={maxPages}

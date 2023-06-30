@@ -88,7 +88,7 @@ export default function Post({ title, date, description, image, categories, cont
               className={`
                 text-3xl
                 font-bold
-                color-white
+                text-white
                 mb-10 mt-5
               `}
             >
