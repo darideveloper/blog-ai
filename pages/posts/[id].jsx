@@ -99,7 +99,7 @@ export default function Post({ title, date, description, image, categories, cont
         </div>
 
 
-        <div className="content max-w-5xl mx-auto text-lg">
+        <div className="content max-w-5xl mx-auto text-lg mt-20">
           <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
 
