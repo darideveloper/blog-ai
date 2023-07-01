@@ -109,6 +109,7 @@ export default function Post({ title, date, description, image, categories, cont
         <PostsList
           postsData={relatedPosts}
           title="Posts relacionados"
+          isHome={false}
         />
       </aside>
 

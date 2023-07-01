@@ -9,7 +9,7 @@ import Paginator from './paginator'
 
 import { useState, useEffect } from 'react'
 
-export default function PostsList({ postsData, title = "Posts", isHome = false }) {
+export default function PostsList({ postsData, title = "Posts", isHome = true }) {
 
   const postPerPage = 6
   const maxPages = Math.ceil(postsData.length / postPerPage)
@@ -87,7 +87,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
                 flex flex-col items-start justify-start 
                 gap-4
                 md:flex-row-reverse md:w-full md:justify-between md:items-center
-                group-first:md:flex-col
+                ${isHome && "group-first:md:flex-col"}
                 lg:items-start
               `}
             >
@@ -129,7 +129,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = false }
                   md:opacity-60 md:blur-xs
                   md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
                   md:w-80
-                  group-first:md:w-full
+                  ${isHome && "group-first:md:w-full"}
                 `}
               />
             </Link>
