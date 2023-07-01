@@ -6,24 +6,23 @@ image: '/imgs/git-vs-github.webp'
 categories: ['git', "github", "desarrollo"]
 ---
 
-![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-sabes-cual-es-la-diferencia.webp)
-
-
 Cuando comienzas en el desarrollo de software, es muy probable que te encuentres con el término **Git** y **Github**, y es muy probable que te confundas, ya que son dos cosas diferentes, pero que se complementan.
 
 *¿Que es git? ¿Que es Github? ¿Cual es la diferencia entre Git y Github? ¿Cual es mejor? ¿Cual debo usar?*
 
 Vamos a responder estas preguntas.
 
-![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-meme1.webp)
+![imagen ilustrativa de Git vs Github](/imgs/git-vs-github/vs.webp)
 
 ## ¿Que es Git?
 
-![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-meme2.webp)
+![ilustración de git](/imgs/git-vs-github/que-es-git.webp)
 
 Git es un **sistema de control de versiones**, que nos permite llevar un **registro de los cambios que se realizan en un proyecto** lo largo del tiempo, de tal manera que podamos **recuperar versiones específicas más adelante.**
 
-### Para que sirve Git?
+### ¿Para que sirve Git?
+
+![respaldos y servidores](/imgs/git-vs-github/para-que-sirve-git.webp)
 
 ¿Nunca te ha pasado que estas trabajando en un proyecto, y por alguna razón, **necesitas volver a una versión anterior del proyecto**, pero no tienes una copia de esa versión, o no recuerdas que cambios realizaste, o peor aún, no recuerdas que archivos modificaste?
 
@@ -32,6 +31,8 @@ O peor aún, **haces respaldos** de tu proyecto, pero **no sabes que cambios rea
 Justamente para solicionar eso existe Git, ya que **nos permite llevar un registro de cambios con mayor facilidad y movernos entre esos cambios**.
 
 ### ¿Como funciona Git?
+
+![ilustración de ramas y funcionamiento de git](/imgs/git-vs-github/como-funciona-git.webp)
 
 Git funciona de la siguiente manera:
 
@@ -45,11 +46,15 @@ En cualquier momento, puedes volver a una versión anterior de tu proyecto, o ve
 
 ### ¿Que es un repositorio?
 
+![ilustración de repositorio como elementos dentro de una caja](/imgs/git-vs-github/que-es-un-repositorio.webp)
+
 Un repositorio es un lugar donde se almacena información de los cambios que realizaste en tu proyecto.
 
 **Cuando un proyecto está vinculado con git** (tiene una carpeta .git), digi-evoluciona y **se llama** repositorio (o **repo**, para abreviar).
 
 ### Como iniciar con git
+
+![logo de git](/imgs/git-vs-github/git.webp)
 
 Para iniciar con git, debes instalarlo en tu computadora, puedes descargarlo desde su [página oficial](https://git-scm.com/).
 
@@ -57,7 +62,7 @@ Puedes seguir este tutorial para [instalar git en windows](./instalar-git-window
 
 ### ¿Que es github?
 
-![imagen ilustrativa de Git vs Github](/imgs/git-vs-github-meme3.webp)
+![Logos y mascota de github](/imgs/git-vs-github/github-logo-pet.webp)
 
 Github (la página con un [gato-pulpo-mutante-de-la-disformidad](https://cdn.svgporn.com/logos/github-octocat.svg)) como mascota es una plataforma que nos permite **almacenar nuestros repositorios de git en la nube**, de tal manera que podamos **acceder a ellos desde cualquier computadora**, y **compartirlos con otras personas**.
 
