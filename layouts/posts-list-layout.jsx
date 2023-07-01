@@ -6,7 +6,7 @@ import Hero from "@/components/hero"
 import CategoriesButtons from "@/components/categories-buttons"
 import PostsList from "@/components/posts-list"
 
-export default function PostsLayout({ extraTitle = "", categories, postsData, currentCategory }) {
+export default function PostsListLayout({ extraTitle = "", categories, postsData, currentCategory }) {
   
   return (
     <RootLayout
@@ -27,7 +27,7 @@ export default function PostsLayout({ extraTitle = "", categories, postsData, cu
   )
 }
 
-PostsLayout.propTypes = {
+PostsListLayout.propTypes = {
   extraTitle: PropTypes.string,
   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
   postsData: PropTypes.arrayOf(PropTypes.object).isRequired,

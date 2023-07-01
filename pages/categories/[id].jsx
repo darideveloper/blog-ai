@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import PostsLayout from '@/layouts/posts-layout'
+import PostsListLayout from '@/layouts/posts-list-layout'
 
 import { getCategories, getPostsCategory } from '@/lib/categories'
 import { useContext, useEffect } from 'react'
@@ -17,7 +17,7 @@ export default function Category({ postsData, categories, currentCategory, conta
   }, [])
 
   return (
-    <PostsLayout
+    <PostsListLayout
       postsData={postsData}
       categories={categories}
       currentCategory={currentCategory}

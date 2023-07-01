@@ -29,7 +29,7 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
     <>
       <Head>
         <title>{title}</title>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={keyword} />
         <meta name="author" content={metadata.author} />

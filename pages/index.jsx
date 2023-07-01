@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import PostsLayout from '@/layouts/posts-layout'
+import PostsListLayout from '@/layouts/posts-list-layout'
 
 import { getSortedPostsData } from '@/lib/posts'
 import { getCategories } from '@/lib/categories'
@@ -18,7 +18,7 @@ export default function Home({ postsData, categories, contacts }) {
   }, [])
 
   return (
-    <PostsLayout
+    <PostsListLayout
       postsData={postsData}
       categories={categories}
     />
