@@ -19,9 +19,41 @@ export default function Post({ title, date, description, image, categories, cont
 
   const { setContacts } = useContext(ContactsContext)
 
-  // Save contacts in context when component load
   useEffect(() => {
+    // Save contacts in context when component load
     setContacts(contacts)
+
+    // Add click event to code tags
+    const codeTags = document.querySelectorAll('code')
+    codeTags.forEach((codeTag) => {
+
+      const text = codeTag.innerText
+
+      // add message
+      const message = document.createElement('div')
+      message.classList.add('message')
+      message.innerText = 'Copiado'
+      codeTag.appendChild(message)
+
+      codeTag.addEventListener('click', () => {
+
+        // Copy code to clipboard
+        navigator.clipboard.writeText(text)
+
+        // Get message element
+        const message = codeTag.querySelector('.message')
+
+        // Show message
+        message.classList.add('show')
+
+        // Hide message after 0.5 second
+        setTimeout(() => {
+          message.classList.remove('show')
+        }, 500)
+
+
+      })
+    })
   }, [])
 
   // Format categories
