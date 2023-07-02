@@ -1,8 +1,8 @@
 ---
 title: 'Git vs Github, ¿Sabes cual es la diferencia?'
-date: '2032-06-28'
+date: '2023-06-28'
 description: 'Git y Github, que son, como funcionan, y cual es la diferencia entre ellos.'
-image: '/imgs/git-vs-github.webp'
+image: '/imgs/git-vs-github/banner.webp'
 categories: ['git', "github", "desarrollo"]
 ---
 
