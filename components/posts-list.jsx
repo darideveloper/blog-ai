@@ -126,7 +126,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                 height={900}
                 className={`
                   w-full 
-                  md:opacity-60 md:blur-xs
+                  md:opacity-60 md:blur-xs ${isHome && "md:group-first:blur-0"}
                   md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
                   md:w-80
                   ${isHome && "group-first:md:w-full"}
