@@ -17,24 +17,28 @@ Contenido
   - [Cliente servidor en frontend](#cliente-servidor-en-frontend)
   - [Cliente servidor en backend](#cliente-servidor-en-backend)
 - [Protocolo HTTP](#protocolo-http)
-- [Métodos HTTP](#métodos-http)
-  - [Get](#get)
-  - [Post](#post)
-  - [Put](#put)
-  - [Delete](#delete)
-  - [Formularios](#formularios)
-- [Códigos de respuesta HTTP](#códigos-de-respuesta-http)
-  - [1xx](#1xx)
-  - [2xx](#2xx)
-  - [3xx](#3xx)
-  - [4xx](#4xx)
-  - [5xx](#5xx)
-- [Tipos de desarrollo backend (por funcionalidad)](#tipos-de-desarrollo-backend-por-funcionalidad)
-  - [Api](#api)
-  - [Aplicación web](#aplicación-web)
-- [Tipos de desarrollo backend (por organización del código)](#tipos-de-desarrollo-backend-por-organización-del-código)
-- [Monolito](#monolito)
-- [Microservicios](#microservicios)
+  - [Métodos HTTP](#métodos-http)
+    - [Get](#get)
+    - [Post](#post)
+    - [Put](#put)
+    - [Delete](#delete)
+    - [Formularios](#formularios)
+  - [Códigos de respuesta HTTP](#códigos-de-respuesta-http)
+    - [1xx](#1xx)
+    - [2xx](#2xx)
+    - [3xx](#3xx)
+    - [4xx](#4xx)
+    - [5xx](#5xx)
+- [Tipos de desarrollo backend](#tipos-de-desarrollo-backend)
+  - [Por funcionalidad](#por-funcionalidad)
+    - [Api](#api)
+    - [Aplicación web](#aplicación-web)
+  - [Por organización del código](#por-organización-del-código)
+    - [Monolito](#monolito)
+    - [Microservicios](#microservicios)
+  - [Por framework](#por-framework)
+    - [Django](#django)
+    - [Flask](#flask)
 
 
 Antes comenzar a crear tus aplicaciones web con django o flask, es importante que entiendas algunos conceptos básicos de **desarrollo backend** y desarrollo web en general.
@@ -113,7 +117,7 @@ El protocolo HTTP (Hypertext Transfer Protocol) es un protocolo de comunicación
 
 Es la forma en como un cliente y un servidor se comunican.
 
-## Métodos HTTP
+### Métodos HTTP
 
 Los métodos HTTP son los **tipos de peticiones** (mensajes) que se pueden hacer a un servidor.
 
@@ -127,7 +131,7 @@ En cada petición **se pueden enviar datos** (por ejemplo, parametros de busqued
 
 Los métodos mas utilizados son los siguientes, aun que hay más, y pese a que lo recomendable es usar el método correcto, en la practica puede variar.
 
-### Get
+#### Get
 
 ![ejemplo de http get](/imgs/fundamentos-backend/http-get.webp)
 
@@ -137,32 +141,32 @@ Es utilizado para **consultar datos** al servidor.
 
 Por ejemplo, cuando vas a [blog.darideveloper.com](https://blog.darideveloper.com/), tu navegador web hace una petición GET al servidor, y este le responde con la página web (le estás diciendo que quieres consultar la página web)
 
-### Post
+#### Post
 
 Este método se usa para **enviar nuevos datos** al servidor.
 
 Por ejemplo, cuando te **registras en una página web**, tu navegador web hace una petición POST al servidor, y este le responde con un mensaje de confirmación (le estás diciendo que quieres enviar tus datos de registro)
 
-### Put
+#### Put
 
 Este método se usa para **actualizar datos** en el servidor.
 
 Por ejemplo, cuando **actualizas tu información de perfil** en una página web, tu navegador web hace una petición PUT al servidor, y este le responde con un mensaje de confirmación (le estás diciendo que quieres actualizar tus datos de perfil)
 
-### Delete
+#### Delete
 
 Este método se usa para **eliminar datos** en el servidor.
 
 Por ejemplo, cuando **eliminas tu cuenta** en una página web, tu navegador web hace una petición DELETE al servidor, y este le responde con un mensaje de confirmación (le estás diciendo que quieres eliminar tu cuenta)
 
-### Formularios
+#### Formularios
 
 ![formulario html](/imgs/fundamentos-backend/form.webp)
 
 En el backend, podemos recibir y leer información de formularios.
 Un formulario de html solo se puede enviar con los métodos GET y POST, por lo que si queremos usar PUT o DELETE, tendremos que usar JavaScript.
 
-## Códigos de respuesta HTTP
+### Códigos de respuesta HTTP
 
 ![error 404 not found](/imgs/fundamentos-backend/404.webp)
 
@@ -170,39 +174,41 @@ Después de enviar una petición, el servidor nos envía una respuesta con (entr
 
 En el frontend, podemos **enviar** el código de respuesta HTTP, según necesitemos.
 
-### 1xx
+#### 1xx
 
 **Respuesta informativa**: La petición se ha recibido y el proceso continúa.
 
 ![meme respuesta 100](/imgs/fundamentos-backend/meme-respuesta-100.webp)
 
-### 2xx
+#### 2xx
 
 **Respuesta satisfactoria**: La petición se ha recibido, se ha comprendido y se ha aceptado.
 
 ![meme respuesta 300](/imgs/fundamentos-backend/meme-respuesta-200.webp)
 
-### 3xx
+#### 3xx
 
 ![meme respuesta 300](/imgs/fundamentos-backend/meme-respuesta-300.webp)
 
 **Respuesta de redirección** Se necesita una acción adicional por tu parte para completar la solicitud.
 
-### 4xx
+#### 4xx
 
 ![meme respuesta 400](/imgs/fundamentos-backend/meme-respuesta-400.webp)
 
 **Error del cliente**: La solicitud contiene sintaxis incorrecta o no se puede procesar.
 
-### 5xx
+#### 5xx
 
 ![meme respuesta 500](/imgs/fundamentos-backend/meme-respuesta-500.webp)
 
 **Error del servidor**: El servidor no pudo completar una solicitud aparentemente válida.
 
-## Tipos de desarrollo backend (por funcionalidad)
+## Tipos de desarrollo backend
 
-### Api
+### Por funcionalidad
+
+#### Api
 
 ![imagen de una pokedex como referencia a la pokeapi](/imgs/fundamentos-backend/imagen-de-pokedex-como-referencia-a-la-pokeapi.webp)
 
@@ -220,7 +226,7 @@ Datos devueltos por la api:
 
 ![datos de la pokeapi formateados](/imgs/fundamentos-backend/datos-de-la-pokeapi-formateados.webp)
 
-### Aplicación web
+#### Aplicación web
 
 Por el contrario, una aplicación web es un **servicio web** que se encarga de **renderizar** (mostrar) **páginas web**.
 
@@ -230,14 +236,27 @@ Por ejemplo, [comunidadmc.com](http://comunidadmc.com/), que tiene, entre otras,
 
 ![comunidadmc inicio](/imgs/fundamentos-backend/comunidadmc-inicio.webp)
 
-## Tipos de desarrollo backend (por organización del código)
+### Por organización del código
 
-## Monolito
+#### Monolito
 
 Se llama así a un proyecto en el que **todo el código está en un solo lugar**.
 
-## Microservicios
+
+
+#### Microservicios
 
 Se llama así a un proyecto en el que **el código está separado en varios proyectos**.
+
+### Por framework
+
+#### Django
+
+Un proyecto de **Django** por lo general **es un monolito**, ya que todo el código está en un solo proyecto.
+
+#### Flask
+
+Flask es mucho mas flexible, por lo que puedes crear un proyecto **monolito** o **microservicios**.
+
 
 [Más información en este video](https://www.youtube.com/watch?v=qAcUGw7HhxM)
