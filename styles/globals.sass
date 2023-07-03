@@ -68,21 +68,49 @@ input
 	> div
 		position: relative
 
-	h1, h2, h3
+	h1, h2, h3, h4, h5, h6
 		color: $white
 		margin-top: 2.5rem
 		font-weight: bold
 		margin-bottom: 1rem
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		
+		&:before
+			content: ""
+			display: block
+			height: 2rem
+			background-color: rgba($accent, 0.3)
+			margin-right: 1rem
 
 	h1
-		font-size: 2rem
-		margin-bottom: 2rem
+		font-size: 2.0rem		
 
 	h2 
-		font-size: 1.5rem
+		font-size: 1.8rem
+		&:before
+			width: 1rem
 
 	h3
-		font-size: 1.25rem
+		font-size: 1.6rem
+		&:before
+			width: 2rem
+
+	h4
+		font-size: 1.4rem
+		&:before
+			width: 3rem
+
+	h5
+		font-size: 1.1rem
+		&:before
+			width: 5rem
+
+	h6
+		font-size: 1rem
+		&:before
+			width: 6rem
 
 	img
 		width: 100%
