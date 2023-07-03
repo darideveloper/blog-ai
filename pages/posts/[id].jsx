@@ -50,10 +50,26 @@ export default function Post({ title, date, description, image, categories, cont
         setTimeout(() => {
           message.classList.remove('show')
         }, 500)
-
-
       })
     })
+
+    // Add classes to table content
+    const titles = document.querySelectorAll('h2')
+    const contentTitle =  Array.from(titles).find ((title) => title.innerText === 'Contenido')
+    if (contentTitle) {
+      const content = contentTitle.nextElementSibling
+      const wrapper = contentTitle.parentNode
+      content.classList.add('table-content')
+    }
+
+    // Add id to h tags
+    const hTags = document.querySelectorAll('h2, h3, h4, h5, h6')
+    for (const hTag of hTags) {
+      const content = hTag.innerText
+      const id = getCleanId(content)
+      hTag.id = id
+    }
+
   }, [])
 
   // Format categories
