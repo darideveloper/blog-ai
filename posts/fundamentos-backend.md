@@ -6,8 +6,8 @@ image: '/imgs/fundamentos-backend/banner.webp'
 categories: ["backend", "desarrollo", "flask", "django"]
 ---
 
-## Contenido
-- [Contenido](#contenido)
+Contenido
+
 - [¿Que es una librería y un framework?](#que-es-una-librería-y-un-framework)
   - [Librería](#librería)
   - [Framework](#framework)

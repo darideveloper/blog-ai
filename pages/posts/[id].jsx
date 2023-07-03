@@ -54,11 +54,10 @@ export default function Post({ title, date, description, image, categories, cont
     })
 
     // Add classes to table content
-    const titles = document.querySelectorAll('h2')
-    const contentTitle =  Array.from(titles).find ((title) => title.innerText === 'Contenido')
-    if (contentTitle) {
-      const content = contentTitle.nextElementSibling
-      const wrapper = contentTitle.parentNode
+    const firstTexts = document.querySelectorAll('p:first-child')
+    const contentFirstText =  Array.from(firstTexts).find ((text) => text.innerText === 'Contenido')
+    if (contentFirstText) {
+      const content = contentFirstText.nextElementSibling
       content.classList.add('table-content')
     }
 
