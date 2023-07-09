@@ -58,7 +58,7 @@ Un repositorio es un lugar donde se almacena información de los cambios que rea
 
 Para iniciar con git, debes instalarlo en tu computadora, puedes descargarlo desde su [página oficial](https://git-scm.com/).
 
-Puedes seguir este tutorial para [instalar git en windows](./instalar-git-windows.md).
+Puedes seguir este tutorial para [instalar git en windows](./instalar-git-windows).
 
 ### ¿Que es github?
 
@@ -74,7 +74,7 @@ Github tiene muchas ventajas, como **hosting gratis** para nuestros proyectos we
 
 Puedes comenzar creando una cuenta en [Github](https://github.com/)
 
-## En resumen, cual es la entre Git y Github?
+## En resumen, cual es la diferencia entre Git y Github?
 
 Git se **instala en nuestra computadora** y nos permite **gestionar los cambios que realizamos en nuestros proyectos.**
 
