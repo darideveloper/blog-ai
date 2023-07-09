@@ -6,11 +6,14 @@ image: '/imgs/instalar-git-windows/banner.webp'
 categories: ["tutorial", "git", "desarrollo"]
 ---
 
-La instalación de Git en Windows es muy sencilla, basicamente es *"siguiente", "siguiente", "siguiente", "sí, acepto vender mi alma", "instalar". *
+La instalación de Git en Windows es muy sencilla, basicamente es *"siguiente", "siguiente", "siguiente", "sí, acepto vender mi alma", "instalar".*
 
 Pero en particular **los pasos 6 y 8 son los mas importantes** que muchos usuarios se saltan, y por eso tienen problemas al usar git.
 
-## 1. Ur a la [página oficial de git](https://git-scm.com/) y seleccionar instalador para tu sistema (puedes comprobarlo en ajustes > sistema > acerca de)
+## 1. Ir a la página oficial de git (enlace abajo) y seleccionar instalador para tu sistema (puedes comprobarlo en ajustes > sistema > acerca de)
+ 
+[Página oficial de git](https://git-scm.com/)
+
 ![captura de pantalla de: Página de descargas](/imgs/instalar-git-windows/1_página_de_descargas.png)
 
 ![captura de pantalla de: Seleccionar instalador](/imgs/instalar-git-windows/1_seleccionar_instalador.png)
