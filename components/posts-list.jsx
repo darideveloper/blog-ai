@@ -20,12 +20,13 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
   for (const post of postsData) {
     if (postGroups[currentGroupId].length == postPerPage) {
       currentGroupId++
-    } 
+    }
     postGroups[currentGroupId].push(post)
   }
-  
+
   const [currentPage, setCurrentPage] = useState(1)
-  const [currentPosts, setCurrentPosts] = useState(postGroups[currentPage - 1])
+  const [currentPosts, setCurrentPosts] = useState([])
+
 
   // Update currentPosts when currentPage changes
   useState(() => {
@@ -48,103 +49,112 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
   }
 
   // Update currentPosts when postsData changes
-  useEffect (() => {
-    setCurrentPosts (postGroups[currentPage - 1])
+  useEffect(() => {
+    if (postGroups) {
+      setCurrentPosts(postGroups[currentPage - 1])
+    }
   }, [currentPage])
 
   return (
     <section className='Posts container mx-auto mb-5 px-2 mt-10' >
-      <h2
-        className={`
-          ${title == "Posts" ? 'hidden' : ''}
-          text-3xl font-bold 
-        `}
-      >{title}</h2>
-
-      <Paginator 
-        currentPage={currentPage}
-        maxPages={maxPages}
-        incrementPage={incrementPage}
-        decrementPage={decrementPage}
-      />
-
-      <ul
-        className=''
-      >
-        {currentPosts.map(({ id, date, title, image, description }) => (
-          <li
-            key={id}
+      {
+        currentPosts
+        &&
+        <>
+          <h2
             className={`
+              ${title == "Posts" ? 'hidden' : ''}
+              text-3xl font-bold 
+            `}
+          >{title}</h2>
+          <Paginator
+            currentPage={currentPage}
+            maxPages={maxPages}
+            incrementPage={incrementPage}
+            decrementPage={decrementPage}
+          />
+
+          <ul
+            className=''
+          >
+            {currentPosts.map(({ id, date, title, image, description }) => (
+
+              <li
+                key={id}
+                className={`
               group
               mb-10 mx-auto
-            `}
-          >
-
-            <Link
-              href={`/posts/${id}`}
-              className={`
-                w-full
-                flex flex-col items-start justify-start 
-                gap-4
-                md:flex-row-reverse md:w-full md:justify-between md:items-center
-                ${isHome && "group-first:md:flex-col"}
-                lg:items-start
               `}
-            >
-              <div className={`
-                  text 
-                  w-full
-                  `}
               >
-                <small>
-                  <Date dateString={date} />
-                </small>
 
-                <h3
+                <Link
+                  href={`/posts/${id}`}
                   className={`
-                  py-2 text-white text-xl
-                  group-hover:text-accent-light duration-200
-                  ${titleFont.className}
-                `}
+                  w-full
+                  flex flex-col items-start justify-start 
+                  gap-4
+                  md:flex-row-reverse md:w-full md:justify-between md:items-center
+                  ${isHome && "group-first:md:flex-col"}
+                    lg:items-start
+                    `}
                 >
-                  {title}
-                </h3>
+                  <div className={`
+                      text 
+                      w-full
+                      `}
+                  >
+                    <small>
+                      <Date dateString={date} />
+                    </small>
 
-                <p
-                  className={`
-                    group-hover:translate-x-4 duration-200
-                  `}
-                >
-                  {description}
-                </p>
-              </div>
+                    <h3
+                      className={`
+                      py-2 text-white text-xl
+                      group-hover:text-accent-light duration-200
+                      ${titleFont.className}
+                      `}
+                    >
+                      {title}
+                    </h3>
 
-              <Image
-                src={image}
-                alt={title}
-                width={1600}
-                height={900}
-                className={`
-                  w-full 
-                  md:opacity-60 md:blur-xs ${isHome && "md:group-first:blur-0"}
-                  md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
-                  md:w-80
-                  ${isHome && "group-first:md:w-full"}
-                `}
-              />
-            </Link>
+                    <p
+                      className={`
+                      group-hover:translate-x-4 duration-200
+                      `}
+                    >
+                      {description}
+                    </p>
+                  </div>
+
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={1600}
+                    height={900}
+                    className={`
+                    w-full 
+                    md:opacity-60 md:blur-xs ${isHome && "md:group-first:blur-0"}
+                    md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
+                    md:w-80
+                    ${isHome && "group-first:md:w-full"}
+                    `}
+                  />
+                </Link>
 
 
-          </li>
-        ))}
-      </ul>
+              </li>
+            ))}
+          </ul>
 
-      <Paginator 
-        currentPage={currentPage}
-        maxPages={maxPages}
-        incrementPage={incrementPage}
-        decrementPage={decrementPage}
-      />
+          <Paginator
+            currentPage={currentPage}
+            maxPages={maxPages}
+            incrementPage={incrementPage}
+            decrementPage={decrementPage}
+          />
+        </>
+      }
+
     </section >
   )
 }
