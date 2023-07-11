@@ -1,7 +1,13 @@
+
 import PropTypes from 'prop-types'
 
 import Head from 'next/head'
 import Image from 'next/image'
+
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { oneDark as codeTheme } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import Date from '@/components/date'
 import RootLayout from '@/layouts/root-layout'
@@ -23,39 +29,9 @@ export default function Post({ title, date, description, image, categories, cont
     // Save contacts in context when component load
     setContacts(contacts)
 
-    // Add click event to code tags
-    const codeTags = document.querySelectorAll('code')
-    codeTags.forEach((codeTag) => {
-
-      const text = codeTag.innerText
-
-      // add message
-      const message = document.createElement('div')
-      message.classList.add('message')
-      message.innerText = 'Copiado'
-      codeTag.appendChild(message)
-
-      codeTag.addEventListener('click', () => {
-
-        // Copy code to clipboard
-        navigator.clipboard.writeText(text)
-
-        // Get message element
-        const message = codeTag.querySelector('.message')
-
-        // Show message
-        message.classList.add('show')
-
-        // Hide message after 0.5 second
-        setTimeout(() => {
-          message.classList.remove('show')
-        }, 500)
-      })
-    })
-
     // Add classes to table content
     const firstTexts = document.querySelectorAll('p:first-child')
-    const contentFirstText =  Array.from(firstTexts).find ((text) => text.innerText === 'Contenido')
+    const contentFirstText = Array.from(firstTexts).find((text) => text.innerText === 'Contenido')
     if (contentFirstText) {
       const content = contentFirstText.nextElementSibling
       content.classList.add('table-content')
@@ -90,11 +66,12 @@ export default function Post({ title, date, description, image, categories, cont
       </Head>
       <article
         className={`
-          post container 
+          post 
+          container 
           mx-auto
           px-5
           `}
-          >
+      >
 
         <div className={`
           relative
@@ -145,10 +122,51 @@ export default function Post({ title, date, description, image, categories, cont
           </header>
         </div>
 
+        <div className="content">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '')
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={codeTheme}
+                    language={match[1]}
+                    PreTag="div"
+                  />
+                ) : (
+                  <code {...props} className={className}>
+                    {children}
+                  </code>
+                )
+              }
+            }}>
 
-        <div className="content max-w-5xl mx-auto text-lg mt-20">
-          <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            {contentHtml}
+          </ReactMarkdown>
         </div>
+
+        {/* <div className="content max-w-5xl mx-auto text-lg mt-20">
+          {contentHtml.map((section, index) => {
+            if (section.type === "code") {
+              // Render block code
+              return (
+                <CodeBlock
+                  key={index}
+                  language={section.language}
+                  code={section.code}
+                />
+              )
+            } else {
+              // Render regular content
+              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+            }
+          })}
+
+
+        </div> */}
 
       </article>
 
