@@ -3,7 +3,7 @@ title: "¿Estás listo para aprender un Flask o Django? | Fundamentos de desarro
 date: '2023-07-02'
 description: 'Conceptos básicos de desarrollo backend, para que puedas aprender cualquier framework de backend'
 image: '/imgs/fundamentos-backend/banner.webp'
-categories: ["backend", "desarrollo", "flask", "django"]
+categories: ["backend", "flask", "django"]
 ---
 
 Contenido

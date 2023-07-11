@@ -3,7 +3,7 @@ title: 'La mayoría de personas no hacen esto al instalar GIT. Tutotial para ins
 date: '2023-07-01'
 description: 'Guia paso a paso para instalar Git en Windows, con capturas de pantalla'
 image: '/imgs/instalar-git-windows/banner.webp'
-categories: ["tutorial", "git", "desarrollo"]
+categories: ["tutorial", "git"]
 ---
 
 La instalación de Git en Windows es muy sencilla, basicamente es *"siguiente", "siguiente", "siguiente", "sí, acepto vender mi alma", "instalar".*
