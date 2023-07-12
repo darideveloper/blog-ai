@@ -129,13 +129,15 @@ export default function Post({ title, date, description, image, categories, cont
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '')
                 return !inline && match ? (
-                  <SyntaxHighlighter
-                    {...props}
-                    children={String(children).replace(/\n$/, '')}
-                    style={codeTheme}
-                    language={match[1]}
-                    PreTag="div"
-                  />
+                  <div className='code-wrapper mb-5'>
+                    <SyntaxHighlighter
+                      {...props}
+                      children={String(children).replace(/\n$/, '')}
+                      style={codeTheme}
+                      language={match[1]}
+                      PreTag="div"
+                    />
+                  </div>
                 ) : (
                   <code {...props} className={className}>
                     {children}
@@ -147,26 +149,6 @@ export default function Post({ title, date, description, image, categories, cont
             {contentHtml}
           </ReactMarkdown>
         </div>
-
-        {/* <div className="content max-w-5xl mx-auto text-lg mt-20">
-          {contentHtml.map((section, index) => {
-            if (section.type === "code") {
-              // Render block code
-              return (
-                <CodeBlock
-                  key={index}
-                  language={section.language}
-                  code={section.code}
-                />
-              )
-            } else {
-              // Render regular content
-              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-            }
-          })}
-
-
-        </div> */}
 
       </article>
 
