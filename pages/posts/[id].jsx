@@ -53,7 +53,7 @@ export default function Post({ title, date, description, image, categories, cont
     }
 
     // Add target blank to links
-    const links = document.querySelectorAll('a')
+    const links = document.querySelectorAll('.post .content a')
     for (const link of links) {
       link.target = '_blank'
     }
