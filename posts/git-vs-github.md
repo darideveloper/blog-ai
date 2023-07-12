@@ -6,6 +6,8 @@ image: '/imgs/git-vs-github/banner.webp'
 categories: ['git', "github"]
 ---
 
+[![Video en youtube](/imgs/git-vs-github/youtube.png)](https://youtu.be/8i9Ic2VN3Lw?t=1071)
+
 Cuando comienzas en el desarrollo de software, es muy probable que te encuentres con el término **Git** y **Github**, y es muy probable que te confundas, ya que son dos cosas diferentes, pero que se complementan.
 
 *¿Que es git? ¿Que es Github? ¿Cual es la diferencia entre Git y Github? ¿Cual es mejor? ¿Cual debo usar?*

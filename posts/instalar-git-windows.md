@@ -6,6 +6,8 @@ image: '/imgs/instalar-git-windows/banner.webp'
 categories: ["tutorial", "git"]
 ---
 
+[![Video en youtube](/imgs/git-vs-github/youtube.png)](https://youtu.be/8i9Ic2VN3Lw?t=2254)
+
 La instalación de Git en Windows es muy sencilla, basicamente es *"siguiente", "siguiente", "siguiente", "sí, acepto vender mi alma", "instalar".*
 
 Pero en particular **los pasos 6 y 8 son los mas importantes** que muchos usuarios se saltan, y por eso tienen problemas al usar git.

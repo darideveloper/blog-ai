@@ -40,8 +40,7 @@ Contenido
     - [Django](#django)
     - [Flask](#flask)
 
-
-Antes comenzar a crear tus aplicaciones web con django o flask, es importante que entiendas algunos conceptos básicos de **desarrollo backend** y desarrollo web en general.
+[![Video en youtube](/imgs/fundamentos-backend/youtube.png)](https://youtu.be/_UNOuMl7TDU?t=571)
 
 ## ¿Que es una librería y un framework?
 
