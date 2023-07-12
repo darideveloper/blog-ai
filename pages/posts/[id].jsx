@@ -45,6 +45,19 @@ export default function Post({ title, date, description, image, categories, cont
       hTag.id = id
     }
 
+    // Add classes to video miniatures
+    const miniatures = document.querySelectorAll("img[alt='Video en youtube']")
+    for (const miniature of miniatures) {
+      const miniatureWrapper = miniature.parentNode
+      miniatureWrapper.classList.add('video-miniature')
+    }
+
+    // Add target blank to links
+    const links = document.querySelectorAll('a')
+    for (const link of links) {
+      link.target = '_blank'
+    }
+
   }, [])
 
   // Format categories
