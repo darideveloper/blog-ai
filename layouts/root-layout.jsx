@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 import { regularFont } from "@/lib/fonts"
 import { metadata } from "@/lib/metadata"
 
-export default function RootLayout({ children, extraTitle = "", extraKeywords = [] }) {
+export default function RootLayout({ children, extraTitle = "", extraKeywords = [], showFooter = true }) {
 
   // Get metadata
   const title = metadata.title + (extraTitle && " | " + extraTitle)
@@ -43,7 +43,12 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
         <main>
           {children}
         </main>
-        <Footer />
+
+        {
+          showFooter
+          &&
+          <Footer />
+        }
       </div>
     </>
   )
@@ -53,4 +58,5 @@ RootLayout.propTypes = {
   children: PropTypes.node.isRequired,
   extraTitle: PropTypes.string,
   extraKeywords: PropTypes.arrayOf(PropTypes.string),
+  showFooter: PropTypes.bool,
 }
