@@ -25,6 +25,9 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
     }
   }
 
+  useEffect(() => {
+  }, [])
+
   return (
     <>
       <Head>

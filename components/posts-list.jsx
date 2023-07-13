@@ -90,13 +90,14 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                 <Link
                   href={`/posts/${id}`}
                   className={`
-                  w-full
-                  flex flex-col items-start justify-start 
-                  gap-4
-                  md:flex-row-reverse md:w-full md:justify-between md:items-center
-                  ${isHome && "group-first:md:flex-col"}
+                    w-full
+                    flex flex-col items-start justify-start 
+                    gap-4
+                    md:flex-row-reverse md:w-full md:justify-between md:items-center
+                    ${isHome && "group-first:md:flex-col"}
                     lg:items-start
-                    `}
+                  `}
+                  data-aos="fade-left"
                 >
                   <div className={`
                       text 
