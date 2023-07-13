@@ -16,3 +16,4 @@ A continuación se enlistan las publicaciones que se realizaron durante el curso
 
 1.  [Git vs Github, ¿Sabes cual es la diferencia?](/posts/git-vs-github)
 2. [La mayoría de personas no hacen esto al instalar GIT. Tutotial para instalar git en windows paso a paso](/posts/instalar-git-windows)
+3. [¿Como estructurar un proyecto en Python? | Archivos y carpetas recomendadas](/posts/estructura-python)
