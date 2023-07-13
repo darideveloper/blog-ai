@@ -1,5 +1,5 @@
 ---
-title: "Crea funciones en python como un Pro"
+title: "Crea funciones en Python como un Pro"
 date: '2023-07-11'
 description: 'Guia y recomendaciones para crear funciones en python de forma profesional'
 image: '/imgs/funciones-python/banner.webp'
