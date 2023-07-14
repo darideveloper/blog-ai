@@ -1,6 +1,6 @@
 ---
 title: "Cuso completo Flask desde 0 2023"
-date: '2023-07-12'
+date: '2024-07-12'
 description: 'Curso completo, online y gratuito de Flask desde 0. Aprende a crear aplicaciónes web con Flask desde cero con este curso de Flask en español.'
 image: '/imgs/flask-2023.webp'
 categories: ["python", "fundamentos"]
@@ -14,6 +14,7 @@ A continuación se enlistan las publicaciones que se realizaron durante el curso
 
 ## Publicaciones del curso
 
-1.  [Git vs Github, ¿Sabes cual es la diferencia?](/posts/git-vs-github)
-2. [La mayoría de personas no hacen esto al instalar GIT. Tutotial para instalar git en windows paso a paso](/posts/instalar-git-windows)
-3. [¿Como estructurar un proyecto en Python? | Archivos y carpetas recomendadas](/posts/estructura-python)
+1. [¿Estás listo para aprender un Flask o Django? | Fundamentos de desarrollo Backend](/posts/fundamentos-backend)
+2. [Crea funciones en Python como un Pro](/posts/funciones-python)
+3. [TODO](/posts/primera-app-flask)
+4. [¿Como estructurar un proyecto en Python? | Archivos y carpetas recomendadas](/posts/estructura-python)
