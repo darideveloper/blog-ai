@@ -65,7 +65,7 @@ ejemplo ()
 ```
 
 * La palabra reservada `def` indica que se va a definir una función.
-* `def` es el nombre de la función (como si fuera una variable).
+* `ejemplo` es el nombre de la función (como si fuera una variable).
 * Se utiliza `:` al final de la primera linea (igual que en los condicionales y ciclos)
 * El código que se encuentra dentro de la función debe estar indentado (igual que en los condicionales y ciclos)
 
