@@ -61,7 +61,8 @@ export default function Post({ title, date, description, image, categories, cont
     // Add aos to images and titles
     const tags = ["img:not([alt='Video en youtube'])", "h2", "h3", "h4", "h5", "h6"]
     const selector = tags.map ((tag) => `.post .content ${tag}`).join(', ')
-    const aosElems = document.querySelectorAll(selector)
+    let aosElems = document.querySelectorAll(selector)
+    aosElems = Array.from(aosElems).slice(3, aosElems.length)
     for (const elem of aosElems) {
       elem.setAttribute('data-aos', 'fade-left')
     }
