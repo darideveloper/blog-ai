@@ -3,7 +3,7 @@ title: "¿Como estructurar un proyecto en Python? | Archivos y carpetas recomend
 date: '2023-07-12'
 description: 'Guia paso a paso para estructurar y organizar un proyecto en Python, para casi cualquier librería y framework.'
 image: '/imgs/estructura-python/banner.webp'
-categories: ['git', 'github', 'curso']
+categories: ['python', 'fundamentos']
 ---
 
 Contenido
@@ -240,8 +240,6 @@ En caso de que el proyecto requiera código adicional, que no sea el archivo pri
 Otra opción sería colocar una carpeta por cada módulo, pero esto ya depende de cada proyecto.
 
 Asegurate de añadir un archivo `__init__.py` en cada carpeta, para que python reconozca la carpeta como un módulo y nos permita importarla.
-
-Puedes leer más sobre módulos en: [**Módulos** en python](/posts/modulos-python)
 
 ```bash
 # Estructura

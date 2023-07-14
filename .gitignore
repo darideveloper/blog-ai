@@ -36,3 +36,5 @@ next-env.d.ts
 
 # Ignore draft posts in the content folder
 *.temp
+/posts/*.todo
+/posts/*.draft

@@ -16,5 +16,5 @@ A continuación se enlistan las publicaciones que se realizaron durante el curso
 
 1. [¿Estás listo para aprender un Flask o Django? | Fundamentos de desarrollo Backend](/posts/fundamentos-backend)
 2. [Crea funciones en Python como un Pro](/posts/funciones-python)
-3. [TODO](/posts/primera-app-flask)
+3. [.env Python | ¿Que son y como usar las variables de entorno en Python?](/posts/env-python)
 4. [¿Como estructurar un proyecto en Python? | Archivos y carpetas recomendadas](/posts/estructura-python)
