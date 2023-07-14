@@ -1,6 +1,6 @@
 ---
 title: "Cuso completo Flask desde 0 2023"
-date: '2024-07-12'
+date: '2023-07-12'
 description: 'Curso completo, online y gratuito de Flask desde 0. Aprende a crear aplicaciónes web con Flask desde cero con este curso de Flask en español.'
 image: '/imgs/flask-2023.webp'
 categories: ["python", "flask", "curso", "backend"]
