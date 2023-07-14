@@ -3,10 +3,10 @@ title: "Cuso completo Flask desde 0 2023"
 date: '2024-07-12'
 description: 'Curso completo, online y gratuito de Flask desde 0. Aprende a crear aplicaciónes web con Flask desde cero con este curso de Flask en español.'
 image: '/imgs/flask-2023.webp'
-categories: ["python", "fundamentos"]
+categories: ["python", "flask", "curso", "backend"]
 ---
 
-En junio de 2023 se inicio el curso de git desde 0, el cual se impartió por twitch, usando como material de apoyo las publicaciones creadas en el blog.
+En junio de 2023 se inicio el curso de **flask desde 0**, el cual se impartió por twitch, usando como material de apoyo las publicaciones creadas en el blog.
 
 Dentro de cada publicación está el contenido de la clase, así como el video de la repetición alojado en youtube.
 
