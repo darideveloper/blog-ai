@@ -2,7 +2,7 @@
 title: "Tu primera App Flask | ¿Como crear una aplicación web con Flask?"
 date: '2023-07-12'
 description: 'Como crear una aplicación web con Flask sencilla, y conceptos básicos del microframework de Python.'
-image: '/imgs/primera-app-flask/banner.webp'
+image: '/imgs/flask-primera-app/banner.webp'
 categories: ['python', 'flask', "backend"]
 ---
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
 Para visualizar la aplicación, es necesario abrir un navegador y acceder a la ruta `http://localhost:5000/`.
 
-![captura de aplicación flask corriendo](/imgs/primera-app-flask/first-flask-running.webp)
+![captura de aplicación flask corriendo](/imgs/flask-primera-app/first-flask-running.webp)
 
 ### Modo de depuración
 
