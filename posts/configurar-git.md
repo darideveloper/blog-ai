@@ -101,4 +101,4 @@ $ git config --global core.excludesfile ~/.gitignore_global
 
 # Referencias
 
-* https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+* [https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
