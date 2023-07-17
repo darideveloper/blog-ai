@@ -135,7 +135,7 @@ export default function Post({ title, date, description, image, categories, cont
                 text-3xl
                 font-bold
                 text-white
-                mb-10 mt-5
+                mb-16 mt-5
               `}
             >
               {title}

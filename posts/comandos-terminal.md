@@ -72,11 +72,11 @@ Un comando se compone de 3 partes:
 
 Ejemplo:
 ```bash
-$ rd -r "carpeta"
+$ rm -r "carpeta"
 ```
 
 En el comando anterior:
-* `rd` es el nombre del comando que vamos a ejecutar,
+* `rm` es el nombre del comando que vamos a ejecutar,
 * `-r` es una opción que le pasamos al comando,
 * `"carpeta"` es un argumento que le pasamos al comando.
 
@@ -214,5 +214,5 @@ $ rm "carpeta"
 ```
 
 ```powershell
-> rm "carpeta"
+> del "carpeta"
 ```

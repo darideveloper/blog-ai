@@ -2,7 +2,7 @@
 title: "Configurar Git como un Pro | Ajustes y opciones principales después de instalar Git"
 date: '2023-07-14'
 description: 'Comandos para configurar git como un pro: usuario, correo, editor de código, etc. Aprende a configurar git como un pro con este tutorial.'
-image: '/imgs/configurar-git/banner.webp'
+image: '/imgs/git-configurar/banner.webp'
 categories: ["git"]
 ---
 
@@ -15,7 +15,7 @@ Contenido
 - [Referencias](#referencias)
 
 
-# Usuario y correo
+## Usuario y correo
 
 para funcionar correctamente, **git necesita saber quien eres**, para ello debes configurar tu usuario y correo usando los siguientes comandos:
 
@@ -33,7 +33,7 @@ En el comando anterior:
 * `user.name` es el nombre de usuario que vamos a usar,
 * `user.email` es el correo que vamos a usar.
 
-# Editor de código
+## Editor de código
 
 Después de instalar, podemos cambiar con que editor de código vamos a trabajar, por defecto git usa vim, pero podemos cambiarlo a nuestro editor favorito, por ejemplo, si usamos **visual studio code**, podemos configurarlo con el siguiente comando:
 
@@ -43,7 +43,7 @@ $ git config --global core.editor "code --wait"
 
 Al escribir **"code --wait"** estamos indicando que queremos usar **visual studio code**, y que queremos que git **espere a que cerremos el editor para continuar** con el proceso.
 
-# Default git commit
+## Default git commit
 
 El comando `commit` es muy importante, ya que nos permite **guardar los cambios que realizamos en nuestro proyecto**, y **agregar un mensaje** que nos permita identificar que cambios realizamos.
 
@@ -68,7 +68,7 @@ $ git config --global commit.template ~/.gitmessage.txt
 
 el `~` indica que el archivo está en la carpeta de usuario, y el `.gitmessage.txt` es el nombre del archivo.
 
-# Archivos excluidos
+## Archivos excluidos
 
 En cada proyecto, podemos crear un archivo llamado `.gitignore`, el cual nos permite indicarle a git que archivos o carpetas **no queremos que sean tomados en cuenta**.
 
@@ -99,6 +99,6 @@ Posteriormente, usamos el siguiente comando para indicarle a git que use ese arc
 $ git config --global core.excludesfile ~/.gitignore_global
 ```
 
-# Referencias
+## Referencias
 
 * [https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
