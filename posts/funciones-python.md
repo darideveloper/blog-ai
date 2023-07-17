@@ -14,6 +14,7 @@ Contenido
 - [Argumentos](#argumentos)
   - [Recibir un argumento](#recibir-un-argumento)
   - [Recibir multiples argumentos](#recibir-multiples-argumentos)
+  - [Argumentos por defecto](#argumentos-por-defecto)
   - [Cambiar el orden de los argumentos](#cambiar-el-orden-de-los-argumentos)
   - [Argumentos con tipo de datos](#argumentos-con-tipo-de-datos)
 - [Retorno](#retorno)
@@ -117,8 +118,8 @@ saludar ("Juan", False)
 saludar ("José", True)
 # >> Bienvenido Lord José
 
-### Argumentos por defecto
 ```
+### Argumentos por defecto
 
 Cuando un dato comunmente es el mismo, se puede definir un **valor por defecto** para ese argumento, y así no es necesario escribirlo cada vez que se llama a la función.
 
