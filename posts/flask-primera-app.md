@@ -63,7 +63,7 @@ Para ejecutar la aplicación desde la terminal, es necesario ejecutar el siguien
 ```bash
 $ python -m flask --app {nombre del archivo sin el ".py"} run
 # ejemplo:
-# flask --app app run
+# python -m flask --app app run
 ```
 
 ### Desde el archivo / desde vscode
