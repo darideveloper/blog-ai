@@ -28,6 +28,8 @@ Contenido
     - [Eliminar una carpeta](#eliminar-una-carpeta)
 
 
+[![Video en youtube](/imgs/comandos-terminal/youtube.png)](https://youtu.be/nSmyfpExgh8)
+
 ## ¿Que es una terminal (consola de comandos)?
 
 Una terminal, también conocida como consola de comandos, es una **herramienta que nos permite ejecutar comandos** en nuestro sistema operativo.

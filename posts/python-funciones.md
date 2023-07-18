@@ -2,7 +2,7 @@
 title: "Crea funciones en Python como un Pro"
 date: '2023-07-11'
 description: 'Guia y recomendaciones para crear funciones en python de forma profesional'
-image: '/imgs/funciones-python/banner.webp'
+image: '/imgs/python-funciones/banner.webp'
 categories: ["python", "funciones", "fundamentos"]
 ---
 
@@ -29,6 +29,8 @@ Contenido
   - [autoDocstring](#autodocstring)
 - [Extra: Funciones lambda](#extra-funciones-lambda)
 
+[![Video en youtube](/imgs/python-funciones/youtube.png)](https://youtu.be/YkKO2EOs42Y)
+
 ## Que es una función
 
 En programación, una función es **un bloque de código que realiza una tarea específica**. 
@@ -39,7 +41,7 @@ Se puede ver como una **caja negra** que recibe y devuelve datos.
 
 O una **linea de producción** que recibe materia prima, la procesa y devuelve un producto terminado.
 
-![ilustración de linea de producción](/imgs/funciones-python/production-line.webp)
+![ilustración de linea de producción](/imgs/python-funciones/production-line.webp)
 
 ## ¿Para que sirven las funciones?
 
@@ -338,13 +340,13 @@ La función `enviar_email` recibe 4 argumentos, y devuelve un valor de tipo `boo
 
 ### ¿Qué es documentar?
 
-![meme de pensar](/imgs/funciones-python/thinking.webp)
+![meme de pensar](/imgs/python-funciones/thinking.webp)
 
 Documentar es **escribir comentarios** en el código, para **explicar** que hace cada cosa.
 
 ### ¿Por que documentar?
 
-![meme de documentar el código](/imgs/funciones-python/documentation.webp)
+![meme de documentar el código](/imgs/python-funciones/documentation.webp)
 
 Documentar es importante porque:
 * Ayuda a **entender el código** a otras personas (o a ti mismo en el futuro)

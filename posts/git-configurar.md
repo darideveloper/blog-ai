@@ -14,6 +14,7 @@ Contenido
 - [Archivos excluidos](#archivos-excluidos)
 - [Referencias](#referencias)
 
+[![Video en youtube](/imgs/git-configurar/youtube.png)](https://youtu.be/F82ZJAG2UrU)
 
 ## Usuario y correo
 

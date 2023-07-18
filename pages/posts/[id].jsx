@@ -135,7 +135,7 @@ export default function Post({ title, date, description, image, categories, cont
                 text-3xl
                 font-bold
                 text-white
-                mb-16 mt-5
+                mb-8 mt-5
               `}
             >
               {title}
@@ -144,7 +144,7 @@ export default function Post({ title, date, description, image, categories, cont
           </header>
         </div>
 
-        <div className="content">
+        <div className="content m-10">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{

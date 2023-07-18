@@ -12,6 +12,8 @@ Dentro de cada publicación está el contenido de la clase, así como el video d
 
 A continuación se enlistan las publicaciones que se realizaron durante el curso.
 
+Únete al grupo de [Whatsapp](https://chat.whatsapp.com/GW2lWua37R8CE0V156zW2j)
+
 ## Publicaciones del curso
 
 1. [¿Estás listo para aprender un Flask o Django? | Fundamentos de desarrollo Backend](/posts/fundamentos-backend)

@@ -18,6 +18,8 @@ Contenido
 - [Código final](#código-final)
 - [Referencias](#referencias)
 
+[![Video en youtube](/imgs/flask-primera-app/youtube.png)](https://youtu.be/XgUojI0aqUw)
+
 ## Instalar Flask
 
 Antes de usar flask, es necesario instalarlo en tu python. Para ello, abre una terminal y ejecutar el siguiente comando: 
