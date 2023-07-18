@@ -76,7 +76,6 @@ export default function Header({ links }) {
                 flex flex-row items-center justify-center gap-3
                 md:text-lg md:ml-3 md:flex-col md:gap-0 md:items-start
                 lg:text-2xl lg:gap-3 lg:flex-row
-                group-hover:translate-x-2 duration-200
               `}
             >
               <span>

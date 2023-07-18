@@ -7,8 +7,8 @@ export default function ButtonIcon ({children, extraClasses = "", onClick=() => 
       className={`
         fill-white
         w-10
-        ${enable ? "opacity-60 hover:opacity-80": "opacity-20 cursor-default"}
-        ${enable && scale && 'hover:scale-110'} duration-500
+        ${enable ? "opacity-60 group-hover:opacity-80": "opacity-20 cursor-default"}
+        ${enable && scale && 'lg:group-hover:scale-110'} duration-500
         relative
         ${extraClasses}
       `}
