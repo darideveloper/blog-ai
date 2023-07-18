@@ -2,7 +2,13 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import ButtonWrapper from './button-wrapper'
 
+import { useContext } from 'react'
+import { LoadingContext } from '@/contexts/loading'
+
 export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all' }) {
+
+  // Get set state from context
+  const { setIsLoading } = useContext(LoadingContext)
 
   return (
     <section className="categories container mx-auto px-2">
@@ -26,6 +32,10 @@ export default function CategoriesButtons({ categories, showCounter = true, curr
                   w-full h-full inline-block
                   px-6 py-2  
                 `}
+                onClick={() => {
+                  // Show loading
+                  setIsLoading(true)
+                }}
               >
                 <span>
                   {name}

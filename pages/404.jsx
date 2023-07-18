@@ -37,7 +37,6 @@ export default function page404() {
   useEffect(() => {
     // Set random kaomoji when component is mounted
     const randomKaomoji = kaomojis[Math.floor(Math.random() * kaomojis.length)]
-    console.log(randomKaomoji)
     setKaomoji(randomKaomoji)
   }, [])
 
