@@ -7,8 +7,8 @@ import { LoadingContext } from '@/contexts/loading'
 
 export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all'}) {
 
-  // Get set state from context
-  const { setIsLoading } = useContext(LoadingContext)
+  // Get states and sets from context
+  const { isLoading, setIsLoading } = useContext(LoadingContext)
 
   return (
     <section className="categories container mx-auto px-2">
@@ -24,13 +24,15 @@ export default function CategoriesButtons({ categories, showCounter = true, curr
           >
             <ButtonWrapper
               active={currentCategory === id}
-              hover={currentCategory !== id}
+              hover={currentCategory !== id && !isLoading}
             >
               <Link
                 href={`/categories/${id}`}
                 className={`
                   w-full h-full inline-block
                   px-6 py-2  
+                  duration-200
+                  ${isLoading && 'opacity-50 pointer-events-none'}
                 `}
                 onClick={() => {
                   // Show loading
