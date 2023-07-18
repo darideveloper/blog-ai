@@ -66,26 +66,27 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
   return (
     <div className={`posts w-full relative`}>
 
-      <Loading />
+      {
+        currentPosts
+        &&
 
-      <section className={` 
-          container 
-          mx-auto mb-5 mt-10 px-2
-          relative
-          overflow-hidden
-          min-h-screen
-        `}
-        >
+        <>
+          <Loading />
 
-        {
-          currentPosts
-          &&
-          <>
+          <section className={` 
+              container 
+              mx-auto mb-5 mt-10 px-2
+              relative
+              overflow-hidden
+              min-h-screen
+            `}
+          >
+
             <h2
               className={`
-                ${title == "Posts" ? 'hidden' : ''}
-                text-3xl font-bold 
-              `}
+                    ${title == "Posts" ? 'hidden' : ''}
+                    text-3xl font-bold 
+                  `}
             >{title}</h2>
             <Paginator
               currentPage={currentPage}
@@ -102,21 +103,21 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                 <li
                   key={id}
                   className={`
-                group
-                mb-10 mx-auto
-                `}
+                    group
+                    mb-10 mx-auto
+                    `}
                 >
 
                   <Link
                     href={`/posts/${id}`}
                     className={`
-                      w-full
-                      flex flex-col items-start justify-start 
-                      gap-4
-                      md:flex-row-reverse md:w-full md:justify-between md:items-center
-                      ${isHome && "group-first:md:flex-col"}
-                      lg:items-start
-                    `}
+                          w-full
+                          flex flex-col items-start justify-start 
+                          gap-4
+                          md:flex-row-reverse md:w-full md:justify-between md:items-center
+                          ${isHome && "group-first:md:flex-col"}
+                          lg:items-start
+                        `}
                     data-aos="fade-left"
                     onClick={() => {
                       // Show loading
@@ -124,9 +125,9 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                     }}
                   >
                     <div className={`
-                        text 
-                        w-full
-                        `}
+                            text 
+                            w-full
+                            `}
                     >
                       <small>
                         <Date dateString={date} />
@@ -134,18 +135,18 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
 
                       <h3
                         className={`
-                        py-2 text-white text-xl
-                        group-hover:text-accent-light duration-200
-                        ${titleFont.className}
-                        `}
+                            py-2 text-white text-xl
+                            group-hover:text-accent-light duration-200
+                            ${titleFont.className}
+                            `}
                       >
                         {title}
                       </h3>
 
                       <p
                         className={`
-                        group-hover:translate-x-4 duration-200
-                        `}
+                            group-hover:translate-x-4 duration-200
+                            `}
                       >
                         {description}
                       </p>
@@ -157,12 +158,12 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                       width={1600}
                       height={900}
                       className={`
-                      w-full 
-                      md:opacity-60 md:blur-xs ${isHome && "md:group-first:blur-0"}
-                      md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
-                      md:w-80
-                      ${isHome && "group-first:md:w-full"}
-                      `}
+                          w-full 
+                          md:opacity-60 md:blur-xs ${isHome && "md:group-first:blur-0"}
+                          md:group-hover:opacity-80 md:group-hover:blur-0 duration-500 transition-opacity transition-blur
+                          md:w-80
+                          ${isHome && "group-first:md:w-full"}
+                          `}
                     />
                   </Link>
 
@@ -177,12 +178,12 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
               incrementPage={incrementPage}
               decrementPage={decrementPage}
             />
-          </>
-        }
 
-      </section >
+          </section >
+        </>
+      }
     </div>
-    
+
   )
 }
 
