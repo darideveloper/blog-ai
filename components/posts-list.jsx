@@ -11,6 +11,10 @@ import { useState, useEffect } from 'react'
 
 export default function PostsList({ postsData, title = "Posts", isHome = true }) {
 
+  useEffect (() => {
+    console.log (postsData)
+  }, [postsData])
+
   const postPerPage = 6
   const maxPages = Math.ceil(postsData.length / postPerPage)
 
@@ -29,9 +33,9 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
 
 
   // Update currentPosts when currentPage changes
-  useState(() => {
+  useEffect(() => {
     setCurrentPosts(postGroups[currentPage - 1])
-  }, [currentPage])
+  }, [currentPage, postsData])
 
   function incrementPage() {
     if (currentPage < maxPages) {
@@ -47,13 +51,6 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
       window.scrollTo(0, 0)
     }
   }
-
-  // Update currentPosts when postsData changes
-  useEffect(() => {
-    if (postGroups) {
-      setCurrentPosts(postGroups[currentPage - 1])
-    }
-  }, [currentPage])
 
   return (
     <section className='Posts container mx-auto mb-5 px-2 mt-10' >

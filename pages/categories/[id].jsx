@@ -43,6 +43,8 @@ export async function getStaticPaths() {
 
 // get data of the current post
 export async function getStaticProps({ params }) {
+
+  
   const postsData = await getPostsCategory(params.id)
   const categories = await getCategories()
 
