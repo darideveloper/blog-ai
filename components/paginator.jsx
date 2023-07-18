@@ -8,16 +8,18 @@ export default function Paginator({currentPage, maxPages, incrementPage, decreme
     <div
       className={`
           paginator-wrapper 
-          inline-block
-          w-full
-          md:w-auto
+          container 
+          mx-auto
+          mt-10
         `}>
       <div className={`
           paginator
-          ${maxPages == 1 ? 'hidden' : ''}
+          ${maxPages == 1 ? 'opacity-0' : 'opacity-100'}
           flex items-center justify-center gap-4
+          md:justify-start
           w-auto
           mb-5
+          duration-300
         `}>
         
         <PaginatorButton

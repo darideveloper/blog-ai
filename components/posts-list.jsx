@@ -52,6 +52,8 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
     if (currentPage < maxPages) {
       setCurrentPage(currentPage + 1)
       window.scrollTo(0, 0)
+
+      setIsLoading(true)
     }
 
   }
@@ -60,17 +62,37 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1)
       window.scrollTo(0, 0)
+
+      setIsLoading(true)
     }
   }
 
   return (
-    <div className={`posts w-full relative`}>
+    <div className={`posts w-full`}>
+      
+      <h2
+        className={`
+              ${title == "Posts" ? 'hidden' : ''}
+              text-3xl font-bold 
+            `}
+      >{title}</h2>
+
+      <Paginator
+        currentPage={currentPage}
+        maxPages={maxPages}
+        incrementPage={incrementPage}
+        decrementPage={decrementPage}
+      />
 
       {
         currentPosts
         &&
 
-        <>
+        <div className={`
+          content-wrapper
+          relative
+        `}>
+
           <Loading />
 
           <section className={` 
@@ -82,18 +104,6 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
             `}
           >
 
-            <h2
-              className={`
-                    ${title == "Posts" ? 'hidden' : ''}
-                    text-3xl font-bold 
-                  `}
-            >{title}</h2>
-            <Paginator
-              currentPage={currentPage}
-              maxPages={maxPages}
-              incrementPage={incrementPage}
-              decrementPage={decrementPage}
-            />
 
             <ul
               className=''
@@ -172,16 +182,17 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
               ))}
             </ul>
 
-            <Paginator
-              currentPage={currentPage}
-              maxPages={maxPages}
-              incrementPage={incrementPage}
-              decrementPage={decrementPage}
-            />
 
           </section >
-        </>
+        </div>
       }
+
+      <Paginator
+        currentPage={currentPage}
+        maxPages={maxPages}
+        incrementPage={incrementPage}
+        decrementPage={decrementPage}
+      />
     </div>
 
   )
