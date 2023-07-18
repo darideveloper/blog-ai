@@ -17,7 +17,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
   // Get set state from context
   const { setIsLoading } = useContext(LoadingContext)
 
-  const postPerPage = 6
+  const postPerPage = 10
   const maxPages = Math.ceil(postsData.length / postPerPage)
 
   // Split post in groups of postPerPage
