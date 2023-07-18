@@ -5,7 +5,7 @@ import ButtonWrapper from './button-wrapper'
 import { useContext } from 'react'
 import { LoadingContext } from '@/contexts/loading'
 
-export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all' }) {
+export default function CategoriesButtons({ categories, showCounter = true, currentCategory = 'all'}) {
 
   // Get set state from context
   const { setIsLoading } = useContext(LoadingContext)
@@ -59,4 +59,5 @@ CategoriesButtons.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
   showCounter: PropTypes.bool,
   currentCategory: PropTypes.string,
+  isPosts: PropTypes.bool,
 }

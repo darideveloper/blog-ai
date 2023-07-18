@@ -19,11 +19,16 @@ import { getCleanId } from '@/lib/text'
 import { useContext, useEffect } from 'react'
 import { getContacts } from '@/lib/portfolio'
 import { ContactsContext } from '@/contexts/contacts-context'
+import { LoadingContext } from '@/contexts/loading'
+
+import Loading from '@/components/loading'
 
 // Render current post
 export default function Post({ title, date, description, image, categories, contentHtml, relatedPosts, contacts }) {
 
+  // Get sets from context
   const { setContacts } = useContext(ContactsContext)
+  const { setIsLoading } = useContext(LoadingContext)
 
   useEffect(() => {
     // Save contacts in context when component load
@@ -67,6 +72,10 @@ export default function Post({ title, date, description, image, categories, cont
       elem.setAttribute('data-aos', 'fade-left')
     }
 
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+
   }, [])
 
   // Format categories
@@ -92,8 +101,12 @@ export default function Post({ title, date, description, image, categories, cont
           container 
           mx-auto
           px-5
+          relative
           `}
       >
+        <Loading 
+          extraClasses="-mt-4"
+        />
 
         <div className={`
           relative

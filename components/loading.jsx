@@ -29,15 +29,16 @@ export default function Loading({ extraClasses = "" }) {
   return (
     <div className={`
         loading
+        pt-24
         absolute top-0 left-0 
         z-20
         w-full h-full
-        justify-center
         ${display}
         ${opacity}
         ${extraClasses}
         bg-grey
         duration-300
+        items-start justify-center 
       `}
     >
       <Image

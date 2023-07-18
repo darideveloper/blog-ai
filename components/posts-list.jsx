@@ -40,9 +40,11 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
     setCurrentPosts(postGroups[currentPage - 1])
 
     // Hide loading
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
+    if (isHome) {
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 1000)
+    }
 
   }, [currentPage, postsData])
 
@@ -64,9 +66,7 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
   return (
     <div className={`posts w-full relative`}>
 
-      <Loading 
-        extraClasses='items-start pt-24'
-      />
+      <Loading />
 
       <section className={` 
           container 
@@ -118,6 +118,10 @@ export default function PostsList({ postsData, title = "Posts", isHome = true })
                       lg:items-start
                     `}
                     data-aos="fade-left"
+                    onClick={() => {
+                      // Show loading
+                      setIsLoading(true)
+                    }}
                   >
                     <div className={`
                         text 
