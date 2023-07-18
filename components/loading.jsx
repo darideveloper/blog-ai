@@ -31,7 +31,7 @@ export default function Loading({ extraClasses = "" }) {
         loading
         pt-24
         absolute top-0 left-0 
-        z-20
+        z-30
         w-full h-full
         ${display}
         ${opacity}
