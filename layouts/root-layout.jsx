@@ -9,6 +9,8 @@ import Footer from "@/components/footer"
 import { regularFont } from "@/lib/fonts"
 import { metadata } from "@/lib/metadata"
 
+import Script from "next/script"
+
 export default function RootLayout({ children, extraTitle = "", extraKeywords = [], showFooter = true }) {
 
   // Get metadata
@@ -37,13 +39,24 @@ export default function RootLayout({ children, extraTitle = "", extraKeywords = 
         <meta name="keywords" content={keyword} />
         <meta name="author" content={metadata.author} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon" />nk
+        <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon" />
+
       </Head>
       <div className={`${regularFont.className} text-white-light`}>
         <Header
           {...data.Header}
         />
         <main>
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-9HEBZ32JKV"></Script>
+          <Script>
+            {`          
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-9HEBZ32JKV');
+            `}
+          </Script>
           {children}
         </main>
 
