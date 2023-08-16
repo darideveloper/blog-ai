@@ -22,7 +22,7 @@
 
 Visit at: **[blog.darideveloper.com](https://blog.darideveloper.com/)**
 
-Personal blog created with [Astro](https://astro.build/), about tech, with post generated in markdown
+Personal blog created with [NextJs](https://nextjs.org/), about tech, with post generated in markdown
 
 Project type: **personal**
 
@@ -30,6 +30,7 @@ Project type: **personal**
             <summary>Table of Contents</summary>
             <ol>
 <li><a href='#buildwith'>Build With</a></li>
+<li><a href='#relatedprojects'>Related Projects</a></li>
 <li><a href='#media'>Media</a></li>
 <li><a href='#install'>Install</a></li>
 <li><a href='#run'>Run</a></li>
@@ -39,7 +40,17 @@ Project type: **personal**
 
 # Build with
 
-<div align='center'><a href='https://react.dev/' target='_blank'> <img src='https://cdn.svgporn.com/logos/react.svg' alt='React' title='React' height='50px'/> </a><a href='https://sass-lang.com/' target='_blank'> <img src='https://cdn.svgporn.com/logos/sass.svg' alt='Sass' title='Sass' height='50px'/> </a><a href='https://docs.astro.build/en/getting-started/' target='_blank'> <img src='https://cdn.svgporn.com/logos/astro-icon.svg' alt='Astro' title='Astro' height='50px'/> </a><a href='https://www.mkdocs.org/user-guide/writing-your-docs/' target='_blank'> <img src='https://cdn.svgporn.com/logos/markdown.svg' alt='Markdown' title='Markdown' height='50px'/> </a><a href='https://www.w3schools.com/js/js_es6.asp' target='_blank'> <img src='https://cdn.svgporn.com/logos/javascript.svg' alt='JavaScript' title='JavaScript' height='50px'/> </a><a href='https://tailwindcss.com/' target='_blank'> <img src='https://cdn.svgporn.com/logos/tailwindcss-icon.svg' alt='Tailwind CSS' title='Tailwind CSS' height='50px'/> </a><a href='https://vitejs.dev/guide/' target='_blank'> <img src='https://cdn.svgporn.com/logos/vitejs.svg' alt='Vite' title='Vite' height='50px'/> </a></div>
+<div align='center'><a href='https://developer.mozilla.org/en-US/docs/Web/HTML' target='_blank'> <img src='https://i.imgur.com/OitgDfl.jpeg' alt='HTML + CSS' title='HTML + CSS' height='50px'/> </a><a href='https://react.dev/' target='_blank'> <img src='https://cdn.svgporn.com/logos/react.svg' alt='React' title='React' height='50px'/> </a><a href='https://sass-lang.com/' target='_blank'> <img src='https://cdn.svgporn.com/logos/sass.svg' alt='Sass' title='Sass' height='50px'/> </a><a href='https://nextjs.org/' target='_blank'> <img src='https://cdn.svgporn.com/logos/nextjs-icon.svg' alt='Next JS' title='Next JS' height='50px'/> </a><a href='https://www.mkdocs.org/user-guide/writing-your-docs/' target='_blank'> <img src='https://cdn.svgporn.com/logos/markdown.svg' alt='Markdown' title='Markdown' height='50px'/> </a><a href='https://www.w3schools.com/js/js_es6.asp' target='_blank'> <img src='https://cdn.svgporn.com/logos/javascript.svg' alt='JavaScript' title='JavaScript' height='50px'/> </a><a href='https://tailwindcss.com/' target='_blank'> <img src='https://cdn.svgporn.com/logos/tailwindcss-icon.svg' alt='Tailwind CSS' title='Tailwind CSS' height='50px'/> </a><a href='https://michalsnik.github.io/aos/' target='_blank'> <img src='https://raw.githubusercontent.com/DariHernandez/DariHernandez/main/imgs/aos.svg' alt='AOS' title='AOS' height='50px'/> </a></div>
+
+# Related projects
+
+<div align='center'><a href='https://github.com/darideveloper/portfolio' target='_blank'> <img src='https://github.com/darideveloper/portfolio/blob/master/imgs/logo.png?raw=true' alt='Portfolio Frontend' title='Portfolio Frontend' height='50px'/> </a></div>
+
+# Media
+
+![home](https://github.com/darideveloper/dari-dev-blog/blob/master/screenshots/home.png?raw=true)
+
+![post](https://github.com/darideveloper/dari-dev-blog/blob/master/screenshots/post.png?raw=true)
 
 # Install
 
@@ -75,9 +86,11 @@ $ npm run build
 # Roadmap
 
 - [x] Categories
-- [X] Authors
-- [x] Post generated with markdown
-- [x] Integrate Netlify CMS for create posts
-- [ ] Layout
+- [X] Tags
+- [X] Animations
 - [X] React components
+- [X] Home page
+- [X] Post page
+	- [X] Render markdown
+	- [X] Related posts
 
