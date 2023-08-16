@@ -43,41 +43,41 @@ Project type: **personal**
 
 # Install
 
-## Requirements
-* [note js](https://nodejs.org/es) >= 16.15
-
-## Clone repo
-
-```bash
-$ git clone https://github.com/darideveloper/dari-dev-blog.git
-```
-
-## Install dependencies
-
-```bash
-$ npm install
+## Requirements
+* [note js](https://nodejs.org/es) >= 16.15
+
+## Clone repo
+
+```bash
+$ git clone https://github.com/darideveloper/dari-dev-blog.git
+```
+
+## Install dependencies
+
+```bash
+$ npm install
 ```
 
 # Run
 
-## Run in local
-```bash
-$ npm run dev
+## Run in local
+```bash
+$ npm run dev
 ```
 
 # Build
 
-## Convert project to static files
-```bash
-$ npm run build
+## Convert project to static files
+```bash
+$ npm run build
 ```
 
 # Roadmap
 
-- [x] Categories
-- [X] Authors
-- [x] Post generated with markdown
-- [x] Integrate Netlify CMS for create posts
-- [ ] Layout
+- [x] Categories
+- [X] Authors
+- [x] Post generated with markdown
+- [x] Integrate Netlify CMS for create posts
+- [ ] Layout
 - [X] React components
 
